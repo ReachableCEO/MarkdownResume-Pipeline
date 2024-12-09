@@ -1,0 +1,30 @@
+name: b3bp CI
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    types:
+      - opened
+      - synchronize
+jobs:
+  ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-node@v1
+        with:
+          node-version: 18.x
+      - name: Install
+        run: |
+          corepack yarn
+      - name: Lint
+        env:
+          SHELLCHECK_SEVERITY: warning
+        run: |
+          corepack yarn lint
+      - name: Test
+        run: |
+          corepack yarn test
