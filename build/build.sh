@@ -1,8 +1,5 @@
 #!/usr/bin/env bash
 
-#TODO make this work. For now, editing this script and setting the below export lines is required.
-#source ./ResumeVariables.env
-
 export CandidateName="First Middle Last"
 export CandidatePhone="1 123 456 7890"
 export CandidateLocation="Place 1/Place 2"
