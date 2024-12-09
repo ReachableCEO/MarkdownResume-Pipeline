@@ -1,0 +1,12 @@
+title: "First Middle Last Resume"
+titlepage: true
+titlepage-logo: ""
+date: \today
+header-left: "\\hspace{1cm}"
+header-center: "\\leftmark"
+header-right: "Page \\thepage"
+footer-left: "First Middle Last"
+footer-center: "Your.Tagline.Here."
+footer-right: "[Source code for this resume](https://github.com/reachableceo)"
+urlcolor: blue
+page-background: "../vendor/git.knownelement.com/ExternalVendorCode/pandoc-latex-template/examples/page-background/backgrounds"
