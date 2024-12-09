@@ -6,8 +6,6 @@
   - [Directory Overview](#directory-overview)
   - [Build pipeline](#build-pipeline)
     - [Outputs](#outputs)
-  - [Skills](#skills)
-  - [Projects](#projects)
   - [Production Use](#production-use)
 
 ## Introduction
@@ -51,17 +49,15 @@ In the build directory:
 
 ### Outputs
 
-- Word format output is a best effort . The style file was sourced from : <https://sdsawtelle.github.io/blog/output/simple-markdown-resume-with-pandoc-and-wkhtmltopdf.html>
-- PDF output is considered production. Please see: <https://github.com/Wandmalfarbe/pandoc-latex-template> and <https://github.com/ReachableCEO/rcdoc-pipeline> if you want to re-create/modify the build pipeline.
-
-## Skills
-
-Edit the skills.csv file in SkillsAndProjects. The build scripts will turn that into a nicely formatted table in the generated PDF/Word output. Use two spaces to control line breaks. Wrapping/breaks was the trickiest part to get right.
-
-## Projects
-
-Edit the Projects.md file in SkillsAndProjects. The build script will turn that into a career highlights section in the generated PDF/Word output.
+- Word format output is a best effort . The style file was sourced from : <https://sdsawtelle.github.io/blog/output/simple-markdown-resume-with-pandoc-and-wkhtmltopdf.html> (vendored in vendor/git.knownelement.com/ExternalVendorCode/markdown-resume just in case)
+- PDF output considered production. Please see: <https://github.com/Wandmalfarbe/pandoc-latex-template> (vendored in vendor/git.knownelement.com/ExternalVendorCode/pandoc-latex-template ) and <https://github.com/ReachableCEO/rcdoc-pipeline> if you want to re-create/modify the build pipeline for your own markdown project.
 
 ## Production Use
 
-These assets are in production use at the [ReachableCEO Career Site](https://resume.reachableceo.com) and uploaded to all major job portals. This was a labor of love by the @ReachableCEO in the hopes others can massively optimize the job hunt process.
+This system is in production use by the @ReachableCEO:
+
+- [MarkdownResume-ReachableCEO](https://git.knownelement.com/reachableceo/MarkdownResume-ReachableCEO)
+- [ReachableCEO Career Site](https://resume.reachableceo.com)
+- uploaded to all major job portals
+
+This was a labor of love by the @ReachableCEO in the hopes others can massively optimize the job hunt process.
