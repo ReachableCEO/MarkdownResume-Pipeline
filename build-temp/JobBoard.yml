@@ -7,6 +7,6 @@ header-center: "\\leftmark"
 header-right: "Page \\thepage"
 footer-left: "First Middle Last"
 footer-center: "Your.Tagline.Here."
-footer-right: "[Source code for this resume](https://github.com/reachableceo)"
+footer-right: "[Source code for this resume](https://git.knownelement.com/reachableceo/MarkdownResume-Pipeline)"
 urlcolor: blue
-page-background: "../vendor/git.knownelement.com/ExternalVendorCode/pandoc-latex-template/examples/page-background/backgrounds"
+page-background: "../vendor/git.knownelement.com/ExternalVendorCode/pandoc-latex-template/examples/page-background/backgrounds/background3.pdf"
