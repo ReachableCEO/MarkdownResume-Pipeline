@@ -1,28 +1,25 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
+# shellcheck disable=SC1091
+source "$(dirname "${BASH_SOURCE[0]}")/bash3boilerplate.sh"
 
-#Read in candidate specific variables
+# Load environment variables
+source "./ResumeVariables.env"
 
-source ./ResumeVarialbes.env
-
-#############################################
 # Setup globals
-#############################################
-export BUILD_TEMP_DIR="../build-temp"
-export BUILD_OUTPUT_DIR="../build-output"
-export BuildYamlJobBoard="$BUILD_TEMP_DIR/BuildJobBoard.yml"
-export BuildYamlClientSubmission="$BUILD_TEMP_DIR/BuildClientSubmision.yml"
+readonly BUILD_TEMP_DIR="../build-temp"
+readonly BUILD_OUTPUT_DIR="../build-output"
+readonly BUILD_YAML_JOB_BOARD="$BUILD_TEMP_DIR/BuildJobBoard.yml"
+readonly BUILD_YAML_CLIENT_SUBMISSION="$BUILD_TEMP_DIR/BuildClientSubmission.yml"
 
-export CandidateName=$CandidateName
-export CandidateLogo=$CandidateLogo
-export CandidateTagline=$CandidateTagline
-export ResumeSourceCode=$ResumeSourceCode
-export URLCOLOR=$URLCOLOR
-export PAGEBACKGROUND=$PAGEBACKGROUND
+readonly CANDIDATE_NAME="$CandidateName"
+readonly CANDIDATE_LOGO="$CandidateLogo"
+readonly CANDIDATE_TAGLINE="$CandidateTagline"
+readonly RESUME_SOURCE_CODE="$ResumeSourceCode"
+readonly URL_COLOR="$URLCOLOR"
+readonly PAGE_BACKGROUND="$PAGEBACKGROUND"
 
-# Expand the variables into the rendered YAML files for use by the build process
-
-./mo MarkdownResume-BuildTemplateInput-ClientSubmission.yml > $BuildYamlClientSubmission
-./mo MarkdownResume-BuildTemplateInput-JobBoard.yml > $BuildYamlJobBoard
-
+# Expand variables into rendered YAML files
+./mo "MarkdownResume-BuildTemplateInput-ClientSubmission.yml" > "$BUILD_YAML_CLIENT_SUBMISSION"
+./mo "MarkdownResume-BuildTemplateInput-JobBoard.yml" > "$BUILD_YAML_JOB_BOARD"
 
