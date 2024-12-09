@@ -1,0 +1,19 @@
+ACCPTST:STDIO_REPLACE_DATETIMES
+
+ Help using {root}/main.sh
+
+  -f --file  [arg] Filename to process. Required.
+  -t --temp  [arg] Location of tempfile. Default="{tmpdir}/bar"
+  -v               Enable verbose mode, print script as it is executed
+  -d --debug       Enables debug mode
+  -h --help        This page
+  -n --no-color    Disable color output
+  -1 --one         Do just one thing
+  -i --input [arg] File to process. Can be repeated.
+  -x               Specify a flag. Can be repeated.
+
+ This is Bash3 Boilerplate's help text. Feel free to add any description of your
+ program or elaborate more on command-line arguments. This section is not
+ parsed and will be added as-is to the help.
+
+{datetime} UTC [32m[     info][0m Cleaning up. Done
