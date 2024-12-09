@@ -1,7 +1,0 @@
-title: "First Middle Last Resume"
-header-left: "\\hspace{1cm}"
-header-center: "\\leftmark"
-header-right: "Page \\thepage"
-footer-left: "First Middle Last"
-urlcolor: blue
-page-background: "../vendor/git.knownelement.com/ExternalVendorCode/pandoc-latex-template/examples/page-background/backgrounds/background3.pdf"

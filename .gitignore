@@ -1,0 +1,8 @@
+build-output/client-submission/*.md
+build-output/client-submission/*.pdf
+build-output/client-submission/*.doc
+build-output/job-board/*.md
+build-output/job-board/*.pdf
+build-output/job-board/*.doc
+build-temp/*.yml
+build-temp/*.md
