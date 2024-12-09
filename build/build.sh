@@ -24,6 +24,7 @@ export PAGEBACKGROUND="../vendor/git.knownelement.com/ExternalVendorCode/pandoc-
 # Setup globals
 ############################################################
 
+readonly MO_PATH="bash ../vendor/git.knownelement.com/ExternalVendorCode/mo/mo"
 readonly BUILD_OUTPUT_DIR="../build-output"
 readonly BUILD_TEMP_DIR="../build-temp"
 readonly BUILDYAML_JOBBOARD="$BUILD_TEMP_DIR/JobBoard.yml"
@@ -51,14 +52,14 @@ rm $ClientSubmissionMSWordOutputFile
 
 # Expand variables into rendered YAML files. These will be used by pandoc to create the output artifacts
 
-./mo ./BuildTemplate-JobBoard.yml > $BUILDYAML_JOBBOARD
-./mo ./BuildTemplate-ClientSubmission.yml > $BUILDYAML_CLIENTSUBMISSION
+$MO_PATH ./BuildTemplate-JobBoard.yml > $BUILDYAML_JOBBOARD
+$MO_PATH ./BuildTemplate-ClientSubmission.yml > $BUILDYAML_CLIENTSUBMISSION
 
 echo "Combining markdown files into single input file for pandoc..."
 
 # Create contact info md file
-./mo ../Templates/ContactInfo/ContactInfo-JobBoard.md > $BUILD_TEMP_DIR/ContactInfo-JobBoard.md
-./mo ../Templates/ContactInfo/ContactInfo-ClientSubmit.md > $BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md
+$MO_PATH ../Templates/ContactInfo/ContactInfo-JobBoard.md > $BUILD_TEMP_DIR/ContactInfo-JobBoard.md
+$MO_PATH ../Templates/ContactInfo/ContactInfo-ClientSubmit.md > $BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md
 
 #Pull in contact info
 cat $BUILD_TEMP_DIR/ContactInfo-JobBoard.md >> $JobBoardMarkdownOutputFile
