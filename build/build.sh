@@ -129,10 +129,6 @@ pandoc \
 --to=pdf \
 --output $CandidateInfoSheetPDFOutputFIle
 
-
-exit
-
-
 echo "Combining markdown files into single input file for pandoc..."
 
 # Create contact info md file
