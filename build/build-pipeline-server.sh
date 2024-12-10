@@ -144,7 +144,7 @@ pandoc \
 --metadata-file="$PipelineClientWorkingDir/build-temp/JobBoard.yml" \
 --from markdown \
 --to=docx \
---reference-doc=resume-docx-reference.docx \
+--reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
 --output $JobBoardMSWordOutputFile
 
 echo "Generating PDF output for client submission version..."
@@ -164,5 +164,5 @@ pandoc \
 --metadata-file="$PipelineClientWorkingDir/build-temp/ClientSubmission.yml" \
 --from markdown \
 --to=docx \
---reference-doc=resume-docx-reference.docx \
+--reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
 --output $ClientSubmissionMSWordOutputFile
