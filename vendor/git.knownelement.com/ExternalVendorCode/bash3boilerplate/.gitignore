@@ -1,5 +1,0 @@
-.yarn
-assets/build
-env.sh
-node_modules
-npm-debug.log
