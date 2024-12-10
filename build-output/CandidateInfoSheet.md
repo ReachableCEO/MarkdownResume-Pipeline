@@ -87,7 +87,7 @@ If the above is in alignment with this opportunity, please feel free to send me 
 
 ### My resume
 
-[Download Charles resume(pdf)](https://resume.reachableceo.com/job-board/CharlesNWyble-Resume.pdf)
+[Download Candidate resume(format)](https://some.resume.somewhere/some-Resume.pdf)
 
 I am happy to discuss and make edits to the resume content specific to the opportunity if you feel they are needed.
 
