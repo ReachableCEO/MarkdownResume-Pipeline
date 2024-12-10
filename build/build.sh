@@ -29,8 +29,7 @@ export CandidateTagline="Your.Tagline.Here."
 ########################
 
 export CandidateLogo=""
-export ResumeSourceCode="https://git.knownelement.com/reachableceo/MarkdownResume-Pipeline"
-export CandidateInfoSheetSourceCode="https://git.knownelement.com/reachableceo/MarkdownResume-Pipeline"
+export SourceCode="https://git.knownelement.com/reachableceo/MarkdownResume-Pipeline"
 export URLCOLOR="blue"
 export PAGEBACKGROUND="../vendor/git.knownelement.com/ExternalVendorCode/pandoc-latex-template/examples/page-background/backgrounds/background3.pdf"
 

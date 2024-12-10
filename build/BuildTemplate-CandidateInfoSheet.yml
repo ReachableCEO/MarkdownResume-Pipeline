@@ -1,4 +1,4 @@
-title: "{{CandidateName}} Candidate Detail Sheet"
+title: "{{CandidateName}} Candidate Information Sheet"
 titlepage: true
 titlepage-logo: "{{CandidateLogo}}"
 toc: true
@@ -9,6 +9,6 @@ header-center: "\\leftmark"
 header-right: "Page \\thepage"
 footer-left: "{{CandidateName}}"
 footer-center: "{{CandidateTagline}}"
-footer-right: "[Source code]({{CandidateInfoSheetSourceCode}})"
+footer-right: "[Source code]({{SourceCode}})"
 urlcolor: {{URLCOLOR}}
 page-background: "{{PAGEBACKGROUND}}"
