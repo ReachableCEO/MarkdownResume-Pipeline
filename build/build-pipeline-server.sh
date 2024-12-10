@@ -88,7 +88,7 @@ echo "**$COMPANY | $TITLE | $DATEOFEMPLOY**" >> $ClientSubmissionMarkdownOutputF
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
 echo " " >> "$JobBoardMarkdownOutputFile"
-cat $PipelineClientWorkingDIr/Templates/JobHistoryDetails/$COMPANY.md >> "$JobBoardMarkdownOutputFile"
+cat $PipelineClientWorkingDir/Templates/JobHistoryDetails/$COMPANY.md >> "$JobBoardMarkdownOutputFile"
 echo " " >> "$JobBoardMarkdownOutputFile"
 
 cat $PipelineClientWorkingDir/Templates/JobHistoryDetails/$COMPANY.md >> "$ClientSubmissionMarkdownOutputFile"
