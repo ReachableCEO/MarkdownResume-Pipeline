@@ -1,4 +1,4 @@
-# {{CandidateName}} Candidate Information Sheet
+# First Middle Last Candidate Information Sheet
 
 ## Introduction
 
@@ -26,7 +26,7 @@ I am happy to provide professional references once an interview with the end cli
 
 ## Re: relocation
 
-if the role is not based in **{{CandidateLocation}}** or **Other Location** I will need to re-locate
+if the role is not based in **Place 1/Place 2** or **Other Location** I will need to re-locate
 
 | Question                                  | Answer |
 |-------------------------------------------|--------|
@@ -38,7 +38,7 @@ Please be aware that:
 
 - I will **only re-locate at the employer expense**.
 - I will need **two weeks of time** to re-locate.
-- The net amount of the re-location benefit **MUST be at least {{CandidateRelocationNetMinimumAmount}}** to fully compensate me for the time/effort to re-locate.
+- The net amount of the re-location benefit **MUST be at least 1,987.11** to fully compensate me for the time/effort to re-locate.
 - The full re-location benefit **must be provided prior to the confirmed start date**.
 - I **will NOT** accept a reimbursement based re-location package.
 - I am happy to come onsite (at client expense (paid up front)) for training/orientation etc.
@@ -53,21 +53,21 @@ I have a **very strong** preference for fully remote roles.
 
 I am open to (at the absolute bottom of my range):
 
-- **{{CandidateRateSheetRemoteW2HourlyMinimum}}** per hour(w2)
-- **{{CandidateRateSheetRemoteW2AnnualMinimum}}** annually
-- **{{CandidateRateSheetRemote1099HourlyMinimum}}** per hour (1099/corp to corp)
+- **$12.34** per hour(w2)
+- **$123,456.00** annually
+- **$56.78** per hour (1099/corp to corp)
 
 I have a strong preference for roles that are :
 
-- **{{CandidateRateSheetRemoteW2HourlyPrefer}}** per hour(w2) or more
-- **{{CandidateRateSheetRemoteW2AnnualPrefer}}** annually or more
-- **{{CandidateRateSheetRemote1099HourlyPrefer}}** per hour (1099/corp to corp) or more
+- **$34.56** per hour(w2) or more
+- **$321,987.00** annually or more
+- **$78.90** per hour (1099/corp to corp) or more
 
 ### On-site/hybrid roles
 
-- **{{CandidateRateSheetRemoteW2HourlyPrefer}}** per hour(w2) or more
-- **{{CandidateRateSheetRemoteW2AnnualPrefer}}** annually or more
-- **{{CandidateRateSheetRemote1099HourlyPrefer}}** per hour (1099/corp to corp) or more
+- **$34.56** per hour(w2) or more
+- **$321,987.00** annually or more
+- **$78.90** per hour (1099/corp to corp) or more
 
 In regards to compensation type, I am open to:
 
@@ -87,7 +87,7 @@ If the above is in alignment with this opportunity, please feel free to send me 
 
 ### My resume
 
-[Download Candidate resume(format)](https://some.resume.somewhere/some-Resume.pdf)
+[Download Charles resume(pdf)](https://resume.reachableceo.com/job-board/CharlesNWyble-Resume.pdf)
 
 I am happy to discuss and make edits to the resume content specific to the opportunity if you feel they are needed.
 
@@ -97,25 +97,25 @@ Here are my complete candidate details for submission to the role.
 
 | Question                              | Answer                              |
 |---------------------------------------|-------------------------------------|
-| Full name                             | {{CandidateName}}                   |
-| E-mail address                        | {{CandiateEmail}}                   |
-| Phone number                          | {{CandidatePhone}}                  |
-| Preferred form of contact             | {{CandidatePreferredContactMethod}} |
-| Work authorization                    | {{CandidateWorkAuthorization}}      |
-| Are you employed presently?           | {{CandidateEmploymentStatus}}       |
-| Current location                      | {{CandidateCurrentLocation}}        |
-| Current timezone                      | {{CandidateCurrentTimezone}}        |
-| Timezones I can work in               | {{CandidateWorkableTimezones}}      |
-| Availability to interview             | {{CandidateInterviewAvailability}}  |
-| Availability to start                 | {{CandidateStartAvailability}}      |
-| Highest Education                     | {{CandidateHighestEducation}}       |
-| Graduated Year                        | {{CandidateGraduationYear}}         |
-| Name of school                        | {{CandidateSchoolName}}             |
-| Location of school                    | {{CandidateSchoolLocation}}         |
-| Linkedin Profile                      | ({{CandidateLinkedin}})             |
-| Github Profile                        | ({{CandidateGithub}})               |
-| Last project                          | {{CandidateLastProject}}            |
-| DOB                                   | {{CandidateDOB}}                    |
-| Total IT/career experience            | {{CandidateTotalExperience}}        |
+| Full name                             | First Middle Last                   |
+| E-mail address                        |                    |
+| Phone number                          | 1 123 456 7890                  |
+| Preferred form of contact             | Email will get the fastest response. |
+| Work authorization                    | US Citizen      |
+| Are you employed presently?           | Not currently employed       |
+| Current location                      | City,State,Country etc        |
+| Current timezone                      | Timezone        |
+| Timezones I can work in               | Timezones      |
+| Availability to interview             | Sometime  |
+| Availability to start                 | Sometime      |
+| Highest Education                     | Some education level       |
+| Graduated Year                        | Graduation year         |
+| Name of school                        | School name             |
+| Location of school                    | School location         |
+| Linkedin Profile                      | (https://www.linkedin.com/)             |
+| Github Profile                        | (https://www.github.com/)               |
+| Last project                          | Last project            |
+| DOB                                   | MM/DD                    |
+| Total IT/career experience            | epoch        |
 | Open to in-office/hybrid/remote       | Yes                                 |
 | Any trips planned in next six months? | No                                  |
