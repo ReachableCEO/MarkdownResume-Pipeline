@@ -2,7 +2,6 @@
 
 - [MarkdownResume-Pipeline](#markdownresume-pipeline)
   - [Introduction](#introduction)
-  - [Quickstart](#quickstart)
   - [Directory Overview](#directory-overview)
   - [Build pipeline](#build-pipeline)
     - [Outputs](#outputs)
@@ -10,19 +9,9 @@
 
 ## Introduction
 
-Resume formatting/publication/management is difficult, tedious, annoying etc. The @ReachableCEO has hacked the process and made it easy!
+Resume formatting/publication/management is difficult, tedious, annoying etc. The @ReachableCEO has hacked the process and made it easy! This repository is the core build scripts, templates etc used for resume management. It's meant as one half of a complete solution.
 
-## Quickstart
-
-I recommend doing these steps in order for efficency.
-
-- Edit build/build.sh and alter the top section to refelct your information.
-- Edit Templates/WorkHistory/WorkHistory.csv
-- Create Templates/JobHistoryDetails/<position>.md to match the value in the first field of WorkHistory.csv
-- Edit SkillsAndProjects/Projects.md
-- Edit SkillsAndProjects/Skills.csv
-- Edit Templates/CandidateInfoSheet.md
-- cd to the build directory and bash build.sh
+Please see [MarkdownResum-Pipeline-ClientExample repository](https://git.knownelement.com/reachableceo/MarkdownResume-Pipeline-ClientExample) for the other half. You would clone that repository and follow the instructions. That repository has this repository vendored into it.
 
 ## Directory Overview
 
@@ -30,7 +19,7 @@ I recommend doing these steps in order for efficency.
 - build-output: markdown file for pandoc gets placed here. If you want to make formatting changes before conversion to PDF/Word, you can do so.
 - build-temp: working directory for the build process. In case you need to debug an intermediate step.
 - Templates
-  - CandidateInfoSHeet: contains the markdown/yaml template files for a candidate information sheet. This allows you to produce a standardized reply to recruiters to eliminate an average of 6 emails/phone calls per inbound lead. It has a rate sheet and all the standard "matrix" tables they need to fill out for submission to an end client (or, in reality, to the US based recruiting team who interfaces with the client).
+  - CandidateInfoSheet: contains the markdown/yaml template files for a candidate information sheet. This allows you to produce a standardized reply to recruiters to eliminate an average of 6 emails/phone calls per inbound lead. It has a rate sheet and all the standard "matrix" tables they need to fill out for submission to an end client (or, in reality, to the US based recruiting team who interfaces with the client).
   - ContactInfo: contact info (one version for the recruiter facing resume, one version for client facing).
   - JobHistoryDetails: details for each position listed in WorkHistory/WorkHistory.csv.
   - SkillsAndProjects: This contains what the name says. Holds a skills.csv file that gets turned into a skills table and a projects file that gets placed at beginning of resume as a career highlights section.
@@ -40,7 +29,8 @@ I recommend doing these steps in order for efficency.
 
 In the build directory:
 
-- build.sh - Builds three assets:
+- build-demo.sh - End to end self contained build example for testing the repository after changes to templates.
+- build-pipeline-server.sh - Used by client repository to builds three assets:
   - PDF/Word for submitting to job portals
   - PDF/Word for submitting to end clients (strips cover sheet/contact info)
   - PDF of the candidate information sheet.
@@ -56,7 +46,7 @@ In the build directory:
 
 This system is in production use by the @ReachableCEO:
 
-- [MarkdownResume-ReachableCEO](https://git.knownelement.com/reachableceo/MarkdownResume-ReachableCEO)
+- [MarkdownResume-ClientExample-ReachableCEO](https://git.knownelement.com/reachableceo/MarkdownResume-ReachableCEO)
 - [ReachableCEO Career Site](https://resume.reachableceo.com)
 - uploaded to all major job portals
 
