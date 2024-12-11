@@ -266,3 +266,12 @@ pandoc \
 --to=docx \
 --reference-doc=resume-docx-reference.docx \
 --output $ClientSubmissionMSWordOutputFile
+
+#####################################################################################################
+#JSON Resumek
+#####################################################################################################
+
+echo <<<JSONRESUME > $BUILD_OUTPUT_DIR/resume.json
+
+
+JSONRESUME

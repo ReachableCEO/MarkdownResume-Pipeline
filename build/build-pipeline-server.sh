@@ -16,6 +16,10 @@ rm $ClientSubmissionMarkdownOutputFile
 rm $ClientSubmissionPDFOutputFile
 rm $ClientSubmissionMSWordOutputFile
 
+#####################################################################################################
+#Markdown to PDF/MSWord Resumek and candidate info sheet
+#####################################################################################################
+
 # Expand variables into rendered YAML files. These will be used by pandoc to create the output artifacts
 
 $MO_PATH $PipelineClientWorkingDir/build/BuildTemplate-CandidateInfoSheet.yml > $BUILDYAML_CANDIDATEINFOSHEET
@@ -166,3 +170,6 @@ pandoc \
 --to=docx \
 --reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
 --output $ClientSubmissionMSWordOutputFile
+
+
+
