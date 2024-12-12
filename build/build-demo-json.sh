@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #####################################################################################################
-#JSON Resumek
+#JSON Resume
 #####################################################################################################
 
 ###################################################
@@ -29,10 +29,24 @@ export CandidateWebsite="URLTOCANDIDATEWEbSITE"
 # Profile information
 ########################
 
-export CandidateOneLineSummary="Super awesome and stuff."
-export CandidateLinkedin="https://www.linkedin.com/"
-export CandidateGithub="https://www.github.com/"
 export CandidateTagline="Your.Tagline.Here."
+export CandidateOneLineSummary="Super awesome and stuff."
+export CandidateLinkedin="https://www.linkedin.com/in/ab1"
+export CandidateGithubUsername="ghuser"
+export CandidateTwitterUsername="twxuser"
+
+#    "profiles": [
+#      {
+#        "username": "ajaxdavis",
+#        "url": "https://twitter.com/ajaxdavis",
+#        "network": "twitter"
+#      },
+#      {
+#        "url": "https://github.com/thomasdavis",
+#        "username": "thomasdavis",
+#        "network": "github"
+#      }
+#    ]
 
 ########################
 # Formatting options
@@ -42,6 +56,7 @@ export CandidateLogo=""
 export SourceCode="https://git.knownelement.com/reachableceo/MarkdownResume-Pipeline"
 export URLCOLOR="blue"
 export PAGEBACKGROUND="./background3.pdf"
+export JSONRESUME_THEME="professional"
 
 ##########################
 # Candidate info sheet
@@ -78,6 +93,132 @@ export CandidateRateSheetRemoteW2HourlyPrefer="\$34.56"
 export CandidateRateSheetRemoteW2AnnualPrefer="\$321,987.00"
 export CandidateRateSheetRemote1099HourlyPrefer="\$78.90"
 
+export CandidateCertifications=""
+export CandidateReferences=""
+
+#TODO: Read from skills.csv and turn into json like below
+export CandidateSkills=""
+
+#  "skills": [
+#    {
+#      "keywords": [
+#        "HTML / JSX",
+#        "SCSS / CSS / BEM / Styled Components",
+#        "Javascript / Typescript",
+#        "React / Next",
+#        "Redux / Apollo"
+#      ],
+#      "level": "Senior",
+#      "name": "Frontend"
+#    },
+#    {
+#      "keywords": [
+#        "Node",
+#        "Ruby",
+#        "Python",
+##        "Postgres",
+#        "Redis",
+#        "Serverless"
+#      ],
+#      "level": "Senior",
+#      "name": "Backend"
+#    },
+#    {
+#      "keywords": [
+#        "AWS",
+#        "G Cloud",
+#        "Heroku",
+#        "Caching"
+#      ],
+#      "level": "Senior",
+#      "name": "Devops"
+#    }
+#  ],
+
+#TODO: Read from awards.csv and turn into json like below
+export CandidateAwards=""
+#  "awards": [
+#    {
+#      "title": "Defender of the Internet",
+#      "awarder": "Fight For The Future",
+#      "date": "2014-10-02",
+#      "summary": "For my work against mass surveillance and building out civic tools for digital democracy."
+#    }
+#  ],
+
+#TODO: Read from publications.csv and turn into json like below
+export CandidatePublications=""
+
+#  "publications": [
+#    {
+#      "name": "Advanced JavaScript Techniques",
+#      "publisher": "Tech Books Publishing",
+#      "releaseDate": "2019-08-01",
+#      "url": "http://techbookspublishing.com/advanced-javascript",
+#      "summary": "A comprehensive guide to modern JavaScript development."
+#    }
+#  ],
+
+#TODO: Read from volunteer.csv and turn into json like below
+export CandidateVolunteer=""
+
+#  "volunteer": [
+#    {
+#      "organization": "Open Source Project",
+#      "position": "Contributor",
+#      "url": "http://opensourceproject.com",
+#      "startDate": "2016-01-01",
+#      "summary": "Contributing to open source projects to improve software quality.",
+#      "highlights": [
+#        "Fixed critical bugs and added new features.",
+#        "Mentored new contributors."
+#      ]
+#    }
+#  ],
+
+#TODO: Read from languages.csv and turn into json like below
+export CandidateLanguages=""
+
+#  "languages": [
+#    {
+#      "language": "English",
+#      "fluency": "Native speaker"
+#    }
+#  ],
+
+#TODO: Read from interests.csv and turn into json like below
+#  "interests": [
+#    {
+#      "name": "Gardening",
+#      "keywords": [
+#        "Lazy Gardening"
+#      ]
+#    },
+#    {
+#      "name": "Music",
+#      "keywords": [
+#        "Guitar",
+#        "Singing",
+#        "Dancing"
+#      ]
+#    },
+#    {
+#      "name": "Books",
+#      "keywords": [
+#        "Reading",
+#        "Writing",
+#        "History"
+#      ]
+#    },
+#    {
+#      "name": "Open Source",
+#      "keywords": [
+#        "All of it"
+#      ]
+#    }
+#  ]
+
+
 export BUILD_OUTPUT_DIR="../build-output"
 
 
@@ -90,7 +231,7 @@ export BUILD_OUTPUT_DIR="../build-output"
 cat << JSONRESUME > $BUILD_OUTPUT_DIR/resume.json
 {
   "meta": {
-    "theme": "professional"
+    "theme": "$JSONRESUME_THEME"
   },
   "basics": {
     "name": "$CandidateName",

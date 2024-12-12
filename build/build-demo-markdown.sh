@@ -18,8 +18,15 @@
 
 export CandidateName="First Middle Last"
 export CandidatePhone="1 123 456 7890"
+export CandidateRole="Jack of all trades"
 export CandidateLocation="Place 1/Place 2"
+export CandidateCity="City"
+export CandidateCountry="Country"
+export CandidateZipCode="Zip"
+export CandidateSkypeID="SkypeID"
 export CandidateEmail="candidate@domain.com"
+export CandidateAvatar="URLTOAVATAR"
+export CandidateWebsite="URLTOCANDIDATEWEbSITE"
 
 ########################
 # Profile information
