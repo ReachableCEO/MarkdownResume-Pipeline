@@ -41,32 +41,32 @@ pandoc \
 echo "Combining markdown files into single input file for pandoc..."
 
 # Create contact info md file
-$MO_PATH $PipelineClientWorkingDir/Templates/ContactInfo/ContactInfo-JobBoard.md > $BUILD_TEMP_DIR/ContactInfo-JobBoard.md
-$MO_PATH $PipelineClientWorkingDir/Templates/ContactInfo/ContactInfo-ClientSubmit.md > $BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md
+$MO_PATH "$PipelineClientWorkingDir/Templates/ContactInfo/ContactInfo-JobBoard.md" > "$BUILD_TEMP_DIR/ContactInfo-JobBoard.md"
+$MO_PATH "$PipelineClientWorkingDir/Templates/ContactInfo/ContactInfo-ClientSubmit.md" > "$BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md"
 
 #Pull in contact info
-cat $BUILD_TEMP_DIR/ContactInfo-JobBoard.md >> $JobBoardMarkdownOutputFile
-echo " " >> $JobBoardMarkdownOutputFile
+cat $BUILD_TEMP_DIR/ContactInfo-JobBoard.md >> "$JobBoardMarkdownOutputFile"
+echo " " >> "$JobBoardMarkdownOutputFile"
 
 cat $BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md >> $ClientSubmissionMarkdownOutputFile
-echo " " >> $ClientSubmissionMarkdownOutputFile
+echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
-echo "## Career Highlights" >> $JobBoardMarkdownOutputFile
-echo "## Career Highlights" >> $ClientSubmissionMarkdownOutputFile
+echo "## Career Highlights" >> "$JobBoardMarkdownOutputFile"
+echo "## Career Highlights" >> "$ClientSubmissionMarkdownOutputFile"
 
-cat $PipelineClientWorkingDir/Templates/SkillsAndProjects/Projects.md >> $JobBoardMarkdownOutputFile
+cat $PipelineClientWorkingDir/Templates/SkillsAndProjects/Projects.md >> "$JobBoardMarkdownOutputFile"
 echo "\pagebreak" >> $JobBoardMarkdownOutputFile
 
-cat  $PipelineClientWorkingDir/Templates/SkillsAndProjects/Projects.md >> $ClientSubmissionMarkdownOutputFile
-echo "\pagebreak" >> $ClientSubmissionMarkdownOutputFile
+cat  $PipelineClientWorkingDir/Templates/SkillsAndProjects/Projects.md >> "$ClientSubmissionMarkdownOutputFile"
+echo "\pagebreak" >> "$ClientSubmissionMarkdownOutputFile"
 
-echo " " >> $JobBoardMarkdownOutputFile
-echo "## Employment History" >> $JobBoardMarkdownOutputFile
-echo " " >> $JobBoardMarkdownOutputFile
+echo " " >> "$JobBoardMarkdownOutputFile"
+echo "## Employment History" >> "$JobBoardMarkdownOutputFile"
+echo " " >> "$JobBoardMarkdownOutputFile"
 
-echo " " >> $ClientSubmissionMarkdownOutputFile
-echo "## Employment History" >> $ClientSubmissionMarkdownOutputFile
-echo " " >> $ClientSubmissionMarkdownOutputFile
+echo " " >> "$ClientSubmissionMarkdownOutputFile"
+echo "## Employment History" >> "$ClientSubmissionMarkdownOutputFile"
+echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
 #And here we do some magic...
 #Pull in :
@@ -101,12 +101,12 @@ done
 
 #Pull in my skills and generate a beautiful table.
 
-echo "\pagebreak" >> $JobBoardMarkdownOutputFile
+echo "\pagebreak" >> "$JobBoardMarkdownOutputFile"
 echo " " >> "$JobBoardMarkdownOutputFile"
 echo "## Skills" >> "$JobBoardMarkdownOutputFile"
 echo " " >> "$JobBoardMarkdownOutputFile"
 
-echo "\pagebreak" >> $ClientSubmissionMarkdownOutputFile
+echo "\pagebreak" >> "$ClientSubmissionMarkdownOutputFile"
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 echo "## Skills" >> "$ClientSubmissionMarkdownOutputFile"
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
@@ -125,8 +125,8 @@ $(cat $PipelineClientWorkingDir/Templates/SkillsAndProjects/Skills.csv); do
 SKILL_NAME="$(echo $skill|awk -F '|' '{print $1}')"
 SKILL_YEARS="$(echo $skill|awk -F '|' '{print $2}')"
 SKILL_DETAIL="$(echo $skill|awk -F '|' '{print $3}')"
-echo "|**$SKILL_NAME**|$SKILL_YEARS|$SKILL_DETAIL|" >> $JobBoardMarkdownOutputFile
-echo "|**$SKILL_NAME**|$SKILL_YEARS|$SKILL_DETAIL|" >> $ClientSubmissionMarkdownOutputFile
+echo "|**$SKILL_NAME**|$SKILL_YEARS|$SKILL_DETAIL|" >> "$JobBoardMarkdownOutputFile"
+echo "|**$SKILL_NAME**|$SKILL_YEARS|$SKILL_DETAIL|" >> "$ClientSubmissionMarkdownOutputFile"
 
 done
 unset IFS
@@ -139,7 +139,7 @@ pandoc \
 --metadata-file="$PipelineClientWorkingDir/build-temp/JobBoard.yml" \
 --from markdown \
 --to=pdf \
---output $JobBoardPDFOutputFile
+--output "$JobBoardPDFOutputFile"
 
 echo "Generating MSWord output for job board version..."
 
@@ -149,7 +149,7 @@ pandoc \
 --from markdown \
 --to=docx \
 --reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
---output $JobBoardMSWordOutputFile
+--output "$JobBoardMSWordOutputFile"
 
 echo "Generating PDF output for client submission version..."
 
@@ -159,7 +159,7 @@ pandoc \
 --metadata-file="$PipelineClientWorkingDir/build-temp/ClientSubmission.yml" \
 --from markdown \
 --to=pdf \
---output $ClientSubmissionPDFOutputFile
+--output "$ClientSubmissionPDFOutputFile"
 
 echo "Generating MSWord output for client submission version..."
 
@@ -169,7 +169,7 @@ pandoc \
 --from markdown \
 --to=docx \
 --reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
---output $ClientSubmissionMSWordOutputFile
+--output "$ClientSubmissionMSWordOutputFile"
 
 
 
