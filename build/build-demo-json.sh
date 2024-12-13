@@ -4,235 +4,50 @@
 #JSON Resume
 #####################################################################################################
 
+export BUILD_OUTPUT_DIR="../build-output/"
+export JSON_TEMPLATE_DIRECTORY="../Templates/jsonresume/"
+
+
+###################################################################
+# Modify the CandiateVariables.env file to refelct your information
+###################################################################
 ###################################################
-# Modify these values to suit
-###################################################
 
+source "./CandidateVariables.env"
 
-########################
-# Contact info
-########################
+####################################################
+####################################################
+####################################################
+#DO NOT CHANGE ANYTHING BELOW THIS LINE
+####################################################
+####################################################
+####################################################
 
-export CandidateName="First Middle Last"
-export CandidatePhone="1 123 456 7890"
-export CandidateRole="Jack of all trades"
-export CandidateLocation="Place 1/Place 2"
-export CandidateCity="City"
-export CandidateCountry="Country"
-export CandidateZipCode="Zip"
-export CandidateSkypeID="SkypeID"
-export CandidateEmail="candidate@domain.com"
-export CandidateAvatar="URLTOAVATAR"
-export CandidateWebsite="URLTOCANDIDATEWEbSITE"
+add_header() 
 
-########################
-# Profile information
-########################
-
-export CandidateTagline="Your.Tagline.Here."
-export CandidateOneLineSummary="Super awesome and stuff."
-export CandidateLinkedin="https://www.linkedin.com/in/ab1"
-export CandidateGithubUsername="ghuser"
-export CandidateTwitterUsername="twxuser"
-
-#    "profiles": [
-#      {
-#        "username": "ajaxdavis",
-#        "url": "https://twitter.com/ajaxdavis",
-#        "network": "twitter"
-#      },
-#      {
-#        "url": "https://github.com/thomasdavis",
-#        "username": "thomasdavis",
-#        "network": "github"
-#      }
-#    ]
-
-########################
-# Formatting options
-########################
-
-export CandidateLogo=""
-export SourceCode="https://git.knownelement.com/reachableceo/MarkdownResume-Pipeline"
-export URLCOLOR="blue"
-export PAGEBACKGROUND="./background3.pdf"
-export JSONRESUME_THEME="professional"
-
-##########################
-# Candidate info sheet
-##########################
-
-export CandidatePreferredContactMethod="Email will get the fastest response."
-export CandidateWorkAuthorization="US Citizen"
-export CandidateEmploymentStatus="Not currently employed"
-export CandidateCurrentLocation="City,State,Country etc"
-export CandidateCurrentTimezone="Timezone"
-export CandidateWorkableTimezones="Timezones"
-export CandidateInterviewAvailability="Sometime"
-export CandidateStartAvailability="Sometime"
-export CandidateHighestEducation="Some education level"
-export CandidateGraduationYear="Graduation year"
-export CandidateSchoolName="School name"
-export CandidateSchoolLocation="School location"
-export CandidateLastProject="Last project"
-export CandidateDOB="MM/DD"
-export CandidateTotalExperience="epoch"
-
-
-########################
-#Compensation targets
-########################
-
-export CandidateRelocationNetMinimumAmount="1,987.11"
-
-export CandidateRateSheetRemoteW2HourlyMinimum="\$12.34"
-export CandidateRateSheetRemoteW2AnnualMinimum="\$123,456.00"
-export CandidateRateSheetRemote1099HourlyMinimum="\$56.78"
-
-export CandidateRateSheetRemoteW2HourlyPrefer="\$34.56"
-export CandidateRateSheetRemoteW2AnnualPrefer="\$321,987.00"
-export CandidateRateSheetRemote1099HourlyPrefer="\$78.90"
-
-export CandidateCertifications=""
-export CandidateReferences=""
-
-#TODO: Read from skills.csv and turn into json like below
-export CandidateSkills=""
-
-#  "skills": [
-#    {
-#      "keywords": [
-#        "HTML / JSX",
-#        "SCSS / CSS / BEM / Styled Components",
-#        "Javascript / Typescript",
-#        "React / Next",
-#        "Redux / Apollo"
-#      ],
-#      "level": "Senior",
-#      "name": "Frontend"
-#    },
-#    {
-#      "keywords": [
-#        "Node",
-#        "Ruby",
-#        "Python",
-##        "Postgres",
-#        "Redis",
-#        "Serverless"
-#      ],
-#      "level": "Senior",
-#      "name": "Backend"
-#    },
-#    {
-#      "keywords": [
-#        "AWS",
-#        "G Cloud",
-#        "Heroku",
-#        "Caching"
-#      ],
-#      "level": "Senior",
-#      "name": "Devops"
-#    }
-#  ],
-
-#TODO: Read from awards.csv and turn into json like below
-export CandidateAwards=""
-#  "awards": [
-#    {
-#      "title": "Defender of the Internet",
-#      "awarder": "Fight For The Future",
-#      "date": "2014-10-02",
-#      "summary": "For my work against mass surveillance and building out civic tools for digital democracy."
-#    }
-#  ],
-
-#TODO: Read from publications.csv and turn into json like below
-export CandidatePublications=""
-
-#  "publications": [
-#    {
-#      "name": "Advanced JavaScript Techniques",
-#      "publisher": "Tech Books Publishing",
-#      "releaseDate": "2019-08-01",
-#      "url": "http://techbookspublishing.com/advanced-javascript",
-#      "summary": "A comprehensive guide to modern JavaScript development."
-#    }
-#  ],
-
-#TODO: Read from volunteer.csv and turn into json like below
-export CandidateVolunteer=""
-
-#  "volunteer": [
-#    {
-#      "organization": "Open Source Project",
-#      "position": "Contributor",
-#      "url": "http://opensourceproject.com",
-#      "startDate": "2016-01-01",
-#      "summary": "Contributing to open source projects to improve software quality.",
-#      "highlights": [
-#        "Fixed critical bugs and added new features.",
-#        "Mentored new contributors."
-#      ]
-#    }
-#  ],
-
-#TODO: Read from languages.csv and turn into json like below
-export CandidateLanguages=""
-
-#  "languages": [
-#    {
-#      "language": "English",
-#      "fluency": "Native speaker"
-#    }
-#  ],
-
-#TODO: Read from interests.csv and turn into json like below
-#  "interests": [
-#    {
-#      "name": "Gardening",
-#      "keywords": [
-#        "Lazy Gardening"
-#      ]
-#    },
-#    {
-#      "name": "Music",
-#      "keywords": [
-#        "Guitar",
-#        "Singing",
-#        "Dancing"
-#      ]
-#    },
-#    {
-#      "name": "Books",
-#      "keywords": [
-#        "Reading",
-#        "Writing",
-#        "History"
-#      ]
-#    },
-#    {
-#      "name": "Open Source",
-#      "keywords": [
-#        "All of it"
-#      ]
-#    }
-#  ]
-
-
-export BUILD_OUTPUT_DIR="../build-output"
-
-
-#######################################################
-# Don't alter anything below this line
-#######################################################
-
-#JSONSTART
-
-cat << JSONRESUME > $BUILD_OUTPUT_DIR/resume.json
 {
+
+echo "{" > $BUILD_OUTPUT_DIR/resume.json
+
+}
+
+add_meta_section()
+
+{
+
+cat << META >> $BUILD_OUTPUT_DIR/resume.json
   "meta": {
-    "theme": "$JSONRESUME_THEME"
+     "theme": "$JSONRESUME_THEME"
   },
+META
+
+}
+
+add_basics_section() 
+
+{
+
+cat << BASICS >> $BUILD_OUTPUT_DIR/resume.json
   "basics": {
     "name": "$CandidateName",
     "phone": "$CandidatePhone",
@@ -246,342 +61,269 @@ cat << JSONRESUME > $BUILD_OUTPUT_DIR/resume.json
       "city": "$CandidateLocation",
       "countryCode": "$CandidateCountry"
     },
-    "profiles": [
-      {
-        "username": "ajaxdavis",
-        "url": "https://twitter.com/ajaxdavis",
-        "network": "twitter"
-      },
-      {
-        "url": "https://github.com/thomasdavis",
-        "username": "thomasdavis",
-        "network": "github"
-      }
-    ]
   },
-  "certificates": [
-    {
-      "name": "Certified Kubernetes Administrator",
-      "date": "2021-05-01",
-      "issuer": "Cloud Native Computing Foundation",
-      "url": "http://certificates.com/kubernetes"
-    }
-  ],
-  "education": [
-    {
-      "endDate": "2009-12-12",
-      "startDate": "2008-02-12",
-      "area": "Software Engineering (incomplete)",
-      "studyType": "Bachelors",
-      "institution": "The University of Queensland"
-    },
-    {
-      "institution": "University of Technology",
-      "url": "http://universityoftechnology.com",
-      "area": "Computer Science",
-      "studyType": "Bachelor",
-      "startDate": "2010-09-01",
-      "endDate": "2014-06-30",
-      "score": "3.8 GPA",
-      "courses": [
-        "CS101 - Introduction to Computer Science",
-        "CS201 - Data Structures and Algorithms",
-        "CS301 - Operating Systems"
-      ]
-    }
-  ],
-  "references": [
-    {
-      "reference": "Thomas was hired as a lead developer and, upon the leaving of our co-founder took over as CTO of Earbits. Thomas is, hands down, one of those A Players you hear of companies dying to hire. He is incredibly smart, not just at code but about everything from classical music to Chinese language and culture. Thomas is great to work with and, as a well established contributor to open source projects and several successful ventures, commands the respect of engineers at all levels. I would suggest doing anything you can to have him on your team.",
-      "name": "Joey Flores, Co-founder and CEO of Earbits, Inc."
-    },
-    {
-      "reference": "I've had the great pleasure of working with Thomas for the past three years at Earbits, and on a few side projects. Two years ago our CTO left on a moment's notice, Thomas saved our company by quickly stepping up to fill this role. He has been with our company through thick and thin and made serious personal sacrifices in order to help the company during tough times. He is a phenomenal hacker and a true team player. Highly recommended!",
-      "name": "Yotam Rosenbaum, SVP of Operations, Earbits, Inc."
-    },
-    {
-      "reference": "Thomas is an extremely talented engineer with a very broad range of skills and experience. From being a thought leader in the front-end community via backbonetutorials.com and cdnjs.com, to designing and implementing the API for cdnjs.com, working with Thomas has been fantastic learning experience. Thomas is truly a full stack develop, and his work output is incredible. If there is any opportunity to work with Thomas, I take it. He is the definition of an A player.",
-      "name": "Ryan Kirkman, Senior Software Engineer at Nerdwallet"
-    },
-    {
-      "reference": "On Thomas Davis... Hire this guy. Do not be fooled. Incredibly capable and fast. Plays well with others. Unbelievable at front-end work end programming but that is just the start. Visionary. Hire him before I do.",
-      "name": "Greg Davis"
-    }
-  ],
-  "skills": [
-    {
-      "keywords": [
-        "HTML / JSX",
-        "SCSS / CSS / BEM / Styled Components",
-        "Javascript / Typescript",
-        "React / Next",
-        "Redux / Apollo"
-      ],
-      "level": "Senior",
-      "name": "Frontend"
-    },
-    {
-      "keywords": [
-        "Node",
-        "Ruby",
-        "Python",
-        "Postgres",
-        "Redis",
-        "Serverless"
-      ],
-      "level": "Senior",
-      "name": "Backend"
-    },
-    {
-      "keywords": [
-        "AWS",
-        "G Cloud",
-        "Heroku",
-        "Caching"
-      ],
-      "level": "Senior",
-      "name": "Devops"
-    }
-  ],
-  "awards": [
-    {
-      "title": "Defender of the Internet",
-      "awarder": "Fight For The Future",
-      "date": "2014-10-02",
-      "summary": "For my work against mass surveillance and building out civic tools for digital democracy."
-    }
-  ],
-  "publications": [
-    {
-      "name": "Advanced JavaScript Techniques",
-      "publisher": "Tech Books Publishing",
-      "releaseDate": "2019-08-01",
-      "url": "http://techbookspublishing.com/advanced-javascript",
-      "summary": "A comprehensive guide to modern JavaScript development."
-    }
-  ],
-  "volunteer": [
-    {
-      "organization": "Open Source Project",
-      "position": "Contributor",
-      "url": "http://opensourceproject.com",
-      "startDate": "2016-01-01",
-      "summary": "Contributing to open source projects to improve software quality.",
-      "highlights": [
-        "Fixed critical bugs and added new features.",
-        "Mentored new contributors."
-      ]
-    }
-  ],
-  "work": [
-    {
-      "summary": "Over the past several years, I've worked at various roles and companies. Mostly early stage startups, doing full stack product development. ",
-      "website": "https://lordajax.com/",
-      "name": "Misc Companies",
-      "location": "Melbourne",
-      "position": "Product Engineer",
-      "startDate": "2020-05-05",
-      "highlights": [
-        "React / Next",
-        "Node / Laravel",
-        "LLM's",
-        "Diagrams / Canvas"
-      ]
-    },
-    {
-      "summary": "Tokenized is a Bitcoin wallet for issuing, managing and trading digital tokens. I built out the front end which was packaged as an electron app. It was a difficult frontend to build because we store the users keys locally and used them to sign transactions and contracts.",
-      "website": "https://tokenized.com/",
-      "name": "Tokenized",
-      "location": "Melbourne",
-      "position": "Senior Javascript Developer",
-      "startDate": "2020-05-05",
-      "endDate": "2021-05-05",
-      "highlights": [
-        "React",
-        "Redux",
-        "SCSS",
-        "Product"
-      ]
-    },
-    {
-      "summary": "Blockbid is an Australian crypto currency exchange. I started off on the frontend but eventually became lead tech and worked on every moving piece of the exchange. I really enjoyed working with liquidity providers and connecting their platforms to help us achieve liquid markets.",
-      "website": "https://platform.blockbid.io",
-      "name": "Blockbid",
-      "location": "Melbourne",
-      "position": "Senior Javascript Developer",
-      "startDate": "2018-03-01",
-      "endDate": "2020-01-01",
-      "highlights": [
-        "React, Apollo, Styled Components",
-        "Node.js / Rails",
-        "Docker / Heroku / GCP",
-        "Used Figma for design and UX work",
-        "Optimizing markets with tens of millions of rows using SQL."
-      ]
-    },
-    {
-      "highlights": [
-        "Worked with Postgres, Redis and Dynamodb for storage.",
-        "Hosted on a mixture of Heroku Apps and EC2 servers.",
-        "Caching by Fastly and Cloudflare",
-        "Hybrid app supported on all platforms"
-      ],
-      "summary": "Built a very large and complex React / Redux application. It works on all platforms and has IOS/Android builds due to it being a PWA. (wrapped it in React Native though only implementing a WebView)",
-      "website": "https://listium.com",
-      "pinned": true,
-      "name": "Listium",
-      "position": "Developer",
-      "startDate": "2016-01-01",
-      "endDate": "2018-01-01"
-    },
-    {
-      "highlights": [
-        "Developed new tools for contacting congress",
-        "Brainstormed campaign ideas to raise maximum awareness about issues",
-        "Lots of social networking integration"
-      ],
-      "summary": "Hired to take EFF's campaigning to the next level by building an action centre in Ruby on Rails. The action centre is built around some large open source tools that lower the barrier to entry when contacting congress.",
-      "website": "http://www.eff.org",
-      "name": "Electronic Frontier Foundation",
-      "position": "Developer",
-      "startDate": "2014-04-01",
-      "endDate": "2016-01-01"
-    },
-    {
-      "highlights": [
-        "Managed a small team of developers and designers",
-        "Built the entire frontend application with Backbone.js",
-        "Transferred all of the infrastructure from Heroku to AWS"
-      ],
-      "summary": "Started off as a front end developer but took on the role of CTO in early 2013. The application frontend is built with Javascript and organized as a single page application that talks to a collection of Rails web servers which are connected to MongoDB.",
-      "website": "http://www.earbits.com",
-      "name": "Earbits",
-      "position": "CTO",
-      "endDate": "2015-01-09",
-      "startDate": "2013-03-08"
-    },
-    {
-      "highlights": [
-        "This resume is built with JSON Resume",
-        "Over 3000 stars on Github",
-        "Community developed themes",
-        "Tens of thousands of users"
-      ],
-      "summary": "JSON Resume is a community driven open source initiative to create a JSON based standard for resumes. There is no reason why there can't be a common standard for writing a resume that can be extended with an ecosystem of open source tools.",
-      "website": "http://jsonresume.org",
-      "pinned": true,
-      "name": "JSON Resume",
-      "position": "Founder",
-      "startDate": "2014-04-01"
-    },
-    {
-      "highlights": [
-        "Generated  37,000,000 banner views",
-        "100, 000 phone calls to congress",
-        "500, 000 emails",
-        "250, 000 signatures"
-      ],
-      "summary": "Worked on many politically charged campaigns against mass surveillance. Not only technically challenging work but also a lot of networking and getting my hands dirty with politics.    Our biggest project was \"TheDayWeFightBack\"..",
-      "website": "http://www.taskforce.is",
-      "name": "Taskforce.is",
-      "position": "Developer",
-      "startDate": "2013-06-01",
-      "endDate": "2016-01-01"
-    },
-    {
-      "highlights": [
-        "The site and blog combined have managed to receive over 200,000 visitors in 2014."
-      ],
-      "summary": "An international directory of civilian drone / UAV operators for hire. Services include aerial photography, aerial video, mapping, surveying, precision agriculture, real estate photography, remote inspections and infrared imaging. Our plan is to be the place to go when looking for UAV/Drone services. The website is built in Backbone.js and API is built with Node.js and Postgres. ",
-      "website": "http://www.dronehire.org",
-      "name": "Drone Hire",
-      "position": "Co-Founder",
-      "startDate": "2013-01-01"
-    },
-    {
-      "highlights": [
-        "Over two million unique visitors a year",
-        "25,000+ ebook downloads",
-        "300,000+ Youtube views"
-      ],
-      "summary": "I write tutorials and blog post regarding the popular Javascript framework Backbone.js. The tutorials cover a range of topics regarding front end development aimed at beginners, experts and anyone in between.",
-      "website": "http://backbonetutorials.com",
-      "name": "BackboneTutorials.com",
-      "position": "Founder",
-      "startDate": "2011-01-01",
-      "endDate": "2014-01-01"
-    },
-    {
-      "summary": "Ephox is a worldwide company who is heavily involved with the development of TinyMce and enterprise editors. My primary role included building front-end widgets and applications. Worked on a major product using Backbone.js as a base. Heavily involved in UI/UX design and wire-framing. Also spend a lot of time designing API specifications and documentation.",
-      "website": "http://ephox.com",
-      "name": "Ephox",
-      "position": "Front-end Developer",
-      "endDate": "2012-06-01",
-      "startDate": "2011-01-01"
-    }
-  ],
-  "projects": [
-    {
-      "highlights": [
-        "This resume is built with JSON Resume",
-        "Over 3000 stars on Github",
-        "Community developed themes",
-        "Tens of thousands of users"
-      ],
-      "description": "JSON Resume is a community driven open source initiative to create a JSON based standard for resumes. There is no reason why there can't be a common standard for writing a resume that can be extended with an ecosystem of open source tools.",
-      "website": "http://jsonresume.org",
-      "name": "JSON Resume",
-      "startDate": "2014-04-01"
-    },
-    {
-      "highlights": [
-        "Millions of sites use the CDN in production",
-        "Larger market share than Yahoo's, Microsoft's and Google's javascript content distribution networks",
-        "We serve hundreds of billions request a month",
-        "Contains over 3000 popular Javascript libraries",
-        "Millions of developers visit the site per year"
-      ],
-      "description": "Following Google's CDN for jQuery, we decided to start a CDN for the less popular Javascript frameworks. The CDN is community moderated and open source on GitHub. We secured a partnership with Cloudflare who now supports the infrastructure.",
-      "website": "http://www.cdnjs.com",
-      "name": "Cdnjs",
-      "startDate": "2011-01-08"
-    }
-  ],
-  "languages": [
-    {
-      "language": "English",
-      "fluency": "Native speaker"
-    }
-  ],
-  "interests": [
-    {
-      "name": "Gardening",
-      "keywords": [
-        "Lazy Gardening"
-      ]
-    },
-    {
-      "name": "Music",
-      "keywords": [
-        "Guitar",
-        "Singing",
-        "Dancing"
-      ]
-    },
-    {
-      "name": "Books",
-      "keywords": [
-        "Reading",
-        "Writing",
-        "History"
-      ]
-    },
-    {
-      "name": "Open Source",
-      "keywords": [
-        "All of it"
-      ]
-    }
-  ]
+BASICS
+
 }
-JSONRESUME
+
+add_work_section() 
+{
+
+    local input_file=$JSON_TEMPLATE_DIRECTORY/work.csv
+    cat << 'WORK_START'
+  "work": [
+WORK_START
+    awk -F, 'NR>1 {
+        printf "    {\n"
+        printf "      \"name\": \"%s\",\n", $1
+        printf "      \"position\": \"%s\",\n", $2
+        printf "      \"url\": \"%s\",\n", $3
+        printf "      \"startDate\": \"%s\",\n", $4
+        if ($5 != "") printf "      \"endDate\": \"%s\",\n", $5
+        printf "      \"summary\": \"%s\",\n", $6
+        printf "      \"highlights\": [\n        \"%s\"\n      ]\n", gensub(/\|/, "\",\n        \"", "g", $7)
+        printf "    }%s\n", (NR==NR?"":",")
+    }' "$input_file"
+    cat << 'WORK_END'
+  ],
+WORK_END
+
+}
+
+add_volunteer_section() 
+
+{
+
+  local input_file="$JSON_TEMPLATE_DIRECTORY/volunteer.csv"
+  cat << 'VOLUNTEER_START' >> $BUILD_OUTPUT_DIR/resume.json
+  "volunteer": [
+VOLUNTEER_START
+    
+    awk -F, 'NR>1 {
+        printf "    {\n"
+        printf "      \"organization\": \"%s\",\n", $1
+        printf "      \"position\": \"%s\",\n", $2
+        printf "      \"url\": \"%s\",\n", $3
+        printf "      \"startDate\": \"%s\",\n", $3
+        printf "      \"endDate\": \"%s\",\n", $3
+        printf "      \"summary\": \"%s\"\n", $4
+        printf "      \"highlights\": ["
+        printf "        " $7
+        printf "      ]"
+        printf "    }%s\n", (NR==NR?"":",")
+    }' "$input_file"
+    cat << 'VOLUNTEER_END'
+  ],
+VOLUNTEER_END
+
+}
+
+add_awards_section() 
+
+{
+
+    local input_file=$JSON_TEMPLATE_DIRECTORY/awards.csv
+    cat << 'AWARDS_START' >> $BUILD_OUTPUT_DIR/resume.json
+  "awards": [
+AWARDS_START
+    awk -F, 'NR>1 {
+        printf "    {\n"
+        printf "      \"title\": \"%s\",\n", $1
+        printf "      \"date\": \"%s\",\n", $2
+        printf "      \"awarder\": \"%s\",\n", $3
+        printf "      \"summary\": \"%s\"\n", $4
+        printf "    }%s\n", (NR==NR?"":",")
+    }' "$input_file"
+    cat << 'AWARDS_END'
+  ],
+AWARDS_END
+}
+
+
+add_publications_section() 
+
+{
+
+    local input_file=$JSON_TEMPLATE_DIRECTORY/publications.csv
+    cat << 'PUBLICATIONS_START' >> $BUILD_OUTPUT_DIR/resume.json
+  "publications": [
+PUBLICATIONS_START
+    awk -F, 'NR>1 {
+        printf "    {\n"
+        printf "      \"name\": \"%s\",\n", $1
+        printf "      \"publisher\": \"%s\",\n", $2
+        printf "      \"releaseDate\": \"%s\",\n", $3
+        printf "      \"url\": \"%s\",\n", $4
+        printf "      \"summary\": \"%s\"\n", $5
+        printf "    }%s\n", (NR==NR?"":",")
+    }' "$input_file"
+    cat << 'PUBLICATIONS_END'
+  ],
+PUBLICATIONS_END
+
+}
+
+add_volunteer_section() 
+
+{
+
+    local input_file=$JSON_TEMPLATE_DIRECTORY/volunteer.csv
+    cat << 'VOLUNTEER_START' >> $BUILD_OUTPUT_DIR/resume.json
+  "volunteer": [
+VOLUNTEER_START
+    awk -F, 'NR>1 {
+        printf "    {\n"
+        printf "      \"organization\": \"%s\",\n", $1
+        printf "      \"position\": \"%s\",\n", $2
+        printf "      \"url\": \"%s\",\n", $3
+        printf "      \"startDate\": \"%s\",\n", $4
+        printf "      \"summary\": \"%s\",\n", $5
+        printf "      \"highlights\": [\n        \"%s\"\n      ]\n", gensub(/\|/, "\",\n        \"", "g", $6)
+        printf "    }%s\n", (NR==NR?"":",")
+    }' "$input_file"
+    cat << 'VOLUNTEER_END'
+  ],
+VOLUNTEER_END
+
+}
+
+add_skills_section() 
+
+{
+
+    local input_file="$JSON_TEMPLATE_DIRECTORY/skills.csv"
+    cat << 'SKILLS_START' >> $BUILD_OUTPUT_DIR/resume.json
+  "skills": [
+SKILLS_START
+    awk -F, 'NR>1 {
+        printf "    {\n"
+        printf "      \"keywords\": [\n        \"%s\"\n      ],\n", gensub(/\|/, "\",\n        \"", "g", $3)
+        printf "      \"level\": \"%s\",\n", $2
+        printf "      \"name\": \"%s\"\n", $1
+        printf "    }%s\n", (NR==NR?"":",")
+    }' "$input_file"
+    cat << 'SKILLS_END'
+  ],
+SKILLS_END
+
+}
+
+add_education_section() 
+
+{
+
+    local input_file="$JSON_TEMPLATE_DIRECTORY/education.csv"
+    cat << 'EDUCATION_START' >> $BUILD_OUTPUT_DIR/resume.json
+  "education": [
+EDUCATION_START
+    awk -F, 'NR>1 {
+        printf "    {\n"
+        printf "      \"institution\": \"%s\",\n", $1
+        if ($2 != "") printf "      \"url\": \"%s\",\n", $2
+        printf "      \"area\": \"%s\",\n", $3
+        printf "      \"studyType\": \"%s\",\n", $4
+        printf "      \"startDate\": \"%s\",\n", $5
+        printf "      \"endDate\": \"%s\"", $6
+        if ($7 != "") printf ",\n      \"score\": \"%s\"", $7
+        if ($8 != "") printf ",\n      \"courses\": [\n        \"%s\"\n      ]", gensub(/\|/, "\",\n        \"", "g", $8)
+        printf "\n    }%s\n", (NR==NR?"":",")
+    }' "$input_file"
+    cat << 'EDUCATION_END'
+  ],
+EDUCATION_END
+
+}
+
+add_languages_section() 
+
+{
+
+    local input_file="$JSON_TEMPLATE_DIRECTORY/languages.csv"
+    cat << 'LANGUAGES_START' >> $BUILD_OUTPUT_DIR/resume.json
+  "languages": [
+LANGUAGES_START
+    awk -F, 'NR>1 {
+        printf "    {\n"
+        printf "      \"language\": \"%s\",\n", $1
+        printf "      \"fluency\": \"%s\"\n", $2
+        printf "    }%s\n", (NR==NR?"":",")
+    }' "$input_file"
+    cat << 'LANGUAGES_END'
+  ],
+LANGUAGES_END
+
+}
+
+add_interests_section() 
+
+{
+    local input_file="$JSON_TEMPLATE_DIRECTORY/interests.csv"
+    cat << 'INTERESTS_START' >> $BUILD_OUTPUT_DIR/resume.json
+  "interests": [
+INTERESTS_START
+    awk -F, 'NR>1 {
+        printf "    {\n"
+        printf "      \"name\": \"%s\",\n", $1
+        printf "      \"keywords\": [\n        \"%s\"\n      ]\n", gensub(/\|/, "\",\n        \"", "g", $2)
+        printf "    }%s\n", (NR==NR?"":",")
+    }' "$input_file"
+    cat << 'INTERESTS_END'
+  ],
+INTERESTS_END
+
+}
+
+add_references_section() 
+
+{
+
+    local input_file="$JSON_TEMPLATE_DIRECTORY/references.csv"
+    cat << 'REFERENCES_START' >> $BUILD_OUTPUT_DIR/resume.json
+  "references": [
+REFERENCES_START
+    awk -F, 'NR>1 {
+        printf "    {\n"
+        printf "      \"name\": \"%s\",\n", $1
+        printf "      \"reference\": \"%s\"\n", $2
+        printf "    }%s\n", (NR==NR?"":",")
+    }' "$input_file"
+    cat << 'REFERENCES_END'
+  ]
+REFERENCES_END
+
+}
+
+
+add_footer() 
+
+{
+
+echo "}" >> $BUILD_OUTPUT_DIR/resume.json
+
+}
+
+main()
+
+{
+
+  add_header
+  add_meta_section $JSON_TEMPLATE_DIRECTORY/meta.csv
+  add_basics_section $JSON_TEMPLATE_DIRECTORY/basics.csv
+  #add_profiles_section $JSON_TEMPLATE_DIRECTORY/profiles.csv
+  #add_work_section $JSON_TEMPLATE_DIRECTORY/work.csv
+  #add_volunteer_section $JSON_TEMPLATE_DIRECTORY/volunteer.csv
+  #add_education-section $JSON_TEMPLATE_DIRECTORY/education.csv
+  #add_awards_section $JSON_TEMPLATE_DIRECTORY/awards.csv
+  #add_certificates_section $JSON_TEMPLATE_DIRECTORY/certificates.csv
+  #add_publications_section $JSON_TEMPLATE_DIRECTORY/publications.csv
+  #add_skills_section $JSON_TEMPLATE_DIRECTORY/skills.csv
+  #add_languages_section $JSON_TEMPLATE_DIRECTORY/languages.csv
+  #add_interests_section $JSON_TEMPLATE_DIRECTORY/interests.csv
+  #add_references_section $JSON_TEMPLATE_DIRECTORY/references.csv
+  #add_projects_section $JSON_TEMPLATE_DIRECTORY/projects.csv
+  add_footer
+
+}
+
+
+main

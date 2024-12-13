@@ -1,0 +1,4 @@
+name,position,url,startDate,endDate,summary,highlights
+Company,President,https://company.com,2013-01-01,2014-01-01,Description...,Started the company
+Google,Senior Engineer,https://google.com,2014-01-01,2016-06-30,Led frontend infrastructure.,Launched major features|Mentored junior developers|Improved build system
+Startup Inc,CTO,https://startup.com,2016-07-01,,Building next-gen tech.,Grew team to 20 engineers|Architected core platform|Secured Series A funding
