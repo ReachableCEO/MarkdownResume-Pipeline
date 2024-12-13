@@ -2,19 +2,19 @@
 
 echo "Cleaning up from previous runs..."
 
-rm $BUILDYAML_CANDIDATEINFOSHEET
-rm $CandidateInfoSheetMarkdownOutputFile
-rm $CandidateInfoSheetPDFOutputFIle
+rm "$BUILDYAML_CANDIDATEINFOSHEET"
+rm "$CandidateInfoSheetMarkdownOutputFile"
+rm "$CandidateInfoSheetPDFOutputFIle"
 
-rm $BUILDYAML_JOBBOARD
-rm $JobBoardMarkdownOutputFile
-rm $JobBoardPDFOutputFile
-rm $JobBoardMSWordOutputFile
+rm "$BUILDYAML_JOBBOARD"
+rm "$JobBoardMarkdownOutputFile"
+rm "$JobBoardPDFOutputFile"
+rm "$JobBoardMSWordOutputFile"
 
-rm $BUILDYAML_CLIENTSUBMISSION
-rm $ClientSubmissionMarkdownOutputFile
-rm $ClientSubmissionPDFOutputFile
-rm $ClientSubmissionMSWordOutputFile
+rm "$BUILDYAML_CLIENTSUBMISSION"
+rm "$ClientSubmissionMarkdownOutputFile"
+rm "$ClientSubmissionPDFOutputFile"
+rm "$ClientSubmissionMSWordOutputFile"
 
 #####################################################################################################
 #Markdown to PDF/MSWord Resumek and candidate info sheet
@@ -22,13 +22,13 @@ rm $ClientSubmissionMSWordOutputFile
 
 # Expand variables into rendered YAML files. These will be used by pandoc to create the output artifacts
 
-$MO_PATH $PipelineClientWorkingDir/build/BuildTemplate-CandidateInfoSheet.yml > $BUILDYAML_CANDIDATEINFOSHEET
-$MO_PATH $PipelineClientWorkingDir/build/BuildTemplate-JobBoard.yml > $BUILDYAML_JOBBOARD
-$MO_PATH $PipelineClientWorkingDir/build/BuildTemplate-ClientSubmission.yml > $BUILDYAML_CLIENTSUBMISSION
+"$MO_PATH" "$PipelineClientWorkingDir/build/BuildTemplate-CandidateInfoSheet.yml" > "$BUILDYAML_CANDIDATEINFOSHEET"
+"$MO_PATH" "$PipelineClientWorkingDir/build/BuildTemplate-JobBoard.yml >" "$BUILDYAML_JOBBOARD"
+"$MO_PATH" "$PipelineClientWorkingDir/build/BuildTemplate-ClientSubmission.yml" > "$BUILDYAML_CLIENTSUBMISSION"
 
 echo "Creating candidate info sheet..."
 
-$MO_PATH $PipelineClientWorkingDir/Templates/CandidateInfoSheet/CandidateInfoSheet.md > $CandidateInfoSheetMarkdownOutputFile
+"$MO_PATH" "$PipelineClientWorkingDir/Templates/CandidateInfoSheet/CandidateInfoSheet.md" > "$CandidateInfoSheetMarkdownOutputFile"
 
 pandoc \
 "$CandidateInfoSheetMarkdownOutputFile" \
@@ -36,7 +36,7 @@ pandoc \
 --metadata-file="$PipelineClientWorkingDir/build-temp/CandidateInfoSheet.yml" \
 --from markdown \
 --to=pdf \
---output $CandidateInfoSheetPDFOutputFIle
+--output "$CandidateInfoSheetPDFOutputFile"
 
 echo "Combining markdown files into single input file for pandoc..."
 
@@ -45,19 +45,19 @@ $MO_PATH "$PipelineClientWorkingDir/Templates/ContactInfo/ContactInfo-JobBoard.m
 $MO_PATH "$PipelineClientWorkingDir/Templates/ContactInfo/ContactInfo-ClientSubmit.md" > "$BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md"
 
 #Pull in contact info
-cat $BUILD_TEMP_DIR/ContactInfo-JobBoard.md >> "$JobBoardMarkdownOutputFile"
+cat "$BUILD_TEMP_DIR/ContactInfo-JobBoard.md" >> "$JobBoardMarkdownOutputFile"
 echo " " >> "$JobBoardMarkdownOutputFile"
 
-cat $BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md >> $ClientSubmissionMarkdownOutputFile
+cat "$BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md" >> "$ClientSubmissionMarkdownOutputFile"
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
 echo "## Career Highlights" >> "$JobBoardMarkdownOutputFile"
 echo "## Career Highlights" >> "$ClientSubmissionMarkdownOutputFile"
 
-cat $PipelineClientWorkingDir/Templates/SkillsAndProjects/Projects.md >> "$JobBoardMarkdownOutputFile"
-echo "\pagebreak" >> $JobBoardMarkdownOutputFile
+cat "$PipelineClientWorkingDir/Templates/SkillsAndProjects/Projects.md" >> "$JobBoardMarkdownOutputFile"
+echo "\pagebreak" >> "$JobBoardMarkdownOutputFile"
 
-cat  $PipelineClientWorkingDir/Templates/SkillsAndProjects/Projects.md >> "$ClientSubmissionMarkdownOutputFile"
+cat  "$PipelineClientWorkingDir/Templates/SkillsAndProjects/Projects.md" >> "$ClientSubmissionMarkdownOutputFile"
 echo "\pagebreak" >> "$ClientSubmissionMarkdownOutputFile"
 
 echo " " >> "$JobBoardMarkdownOutputFile"
@@ -78,24 +78,24 @@ echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
 IFS=$'\n\t'
 for position in \
-$(cat $PipelineClientWorkingDir/Templates/WorkHistory/WorkHistory.csv); do
+$(cat "$PipelineClientWorkingDir/Templates/WorkHistory/WorkHistory.csv"); do
 
 COMPANY="$(echo $position|awk -F ',' '{print $1}')"
 TITLE="$(echo $position|awk -F ',' '{print $2}')"
 DATEOFEMPLOY="$(echo $position|awk -F ',' '{print $3}')"
 
 echo " " >> "$JobBoardMarkdownOutputFile"
-echo "**$COMPANY | $TITLE | $DATEOFEMPLOY**" >> $JobBoardMarkdownOutputFile
+echo "**$COMPANY | $TITLE | $DATEOFEMPLOY**" >> "$JobBoardMarkdownOutputFile"
 echo " " >> "$JobBoardMarkdownOutputFile"
 
-echo "**$COMPANY | $TITLE | $DATEOFEMPLOY**" >> $ClientSubmissionMarkdownOutputFile
+echo "**$COMPANY | $TITLE | $DATEOFEMPLOY**" >> "$ClientSubmissionMarkdownOutputFile"
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
 echo " " >> "$JobBoardMarkdownOutputFile"
-cat $PipelineClientWorkingDir/Templates/JobHistoryDetails/$COMPANY.md >> "$JobBoardMarkdownOutputFile"
+cat "$PipelineClientWorkingDir/Templates/JobHistoryDetails/$COMPANY.md" >> "$JobBoardMarkdownOutputFile"
 echo " " >> "$JobBoardMarkdownOutputFile"
 
-cat $PipelineClientWorkingDir/Templates/JobHistoryDetails/$COMPANY.md >> "$ClientSubmissionMarkdownOutputFile"
+cat "$PipelineClientWorkingDir/Templates/JobHistoryDetails/$COMPANY.md" >> "$ClientSubmissionMarkdownOutputFile"
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 done
 
@@ -112,16 +112,16 @@ echo "## Skills" >> "$ClientSubmissionMarkdownOutputFile"
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
 #Table heading
-echo "|Skill|Experience|Skill Details|" >> $JobBoardMarkdownOutputFile
-echo "|---|---|---|" >> $JobBoardMarkdownOutputFile
+echo "|Skill|Experience|Skill Details|" >> "$JobBoardMarkdownOutputFile"
+echo "|---|---|---|" >> "$JobBoardMarkdownOutputFile"
 
-echo "|Skill|Experience|Skill Details|" >> $ClientSubmissionMarkdownOutputFile
-echo "|---|---|---|" >> $ClientSubmissionMarkdownOutputFile
+echo "|Skill|Experience|Skill Details|" >> "$ClientSubmissionMarkdownOutputFile"
+echo "|---|---|---|" >> "$ClientSubmissionMarkdownOutputFile"
 
 #Table rows
 IFS=$'\n\t'
 for skill in \
-$(cat $PipelineClientWorkingDir/Templates/SkillsAndProjects/Skills.csv); do
+$(cat "$PipelineClientWorkingDir/Templates/SkillsAndProjects/Skills.csv"); do
 SKILL_NAME="$(echo $skill|awk -F '|' '{print $1}')"
 SKILL_YEARS="$(echo $skill|awk -F '|' '{print $2}')"
 SKILL_DETAIL="$(echo $skill|awk -F '|' '{print $3}')"
@@ -170,6 +170,3 @@ pandoc \
 --to=docx \
 --reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
 --output "$ClientSubmissionMSWordOutputFile"
-
-
-
