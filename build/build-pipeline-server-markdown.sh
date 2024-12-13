@@ -14,6 +14,8 @@ echo "Creating candidate info sheet..."
 
 $MO_PATH $PipelineClientWorkingDir/Templates/MarkdownResume/CandidateInfoSheet/CandidateInfoSheet.md > "$CandidateInfoSheetMarkdownOutputFile"
 
+set -x
+
 pandoc \
 "$CandidateInfoSheetMarkdownOutputFile" \
 --template eisvogel \
