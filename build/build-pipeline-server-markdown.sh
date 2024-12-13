@@ -12,7 +12,7 @@ $MO_PATH $PipelineClientWorkingDir/build/BuildTemplate-ClientSubmission.yml > $B
 
 echo "Creating candidate info sheet..."
 
-$MO_PATH $PipelineClientWorkingDir/Templates/CandidateInfoSheet/CandidateInfoSheet.md > "$CandidateInfoSheetMarkdownOutputFile"
+$MO_PATH $PipelineClientWorkingDir/Templates/MarkdownResume/CandidateInfoSheet/CandidateInfoSheet.md > "$CandidateInfoSheetMarkdownOutputFile"
 
 pandoc \
 "$CandidateInfoSheetMarkdownOutputFile" \
@@ -25,8 +25,8 @@ pandoc \
 echo "Combining markdown files into single input file for pandoc..."
 
 # Create contact info md file
-$MO_PATH "$PipelineClientWorkingDir/Templates/ContactInfo/ContactInfo-JobBoard.md" > "$BUILD_TEMP_DIR/ContactInfo-JobBoard.md"
-$MO_PATH "$PipelineClientWorkingDir/Templates/ContactInfo/ContactInfo-ClientSubmit.md" > "$BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md"
+$MO_PATH "$PipelineClientWorkingDir/Templates/MarkdownResume/ContactInfo/ContactInfo-JobBoard.md" > "$BUILD_TEMP_DIR/ContactInfo-JobBoard.md"
+$MO_PATH "$PipelineClientWorkingDir/Templates/MarkdownResume/ContactInfo/ContactInfo-ClientSubmit.md" > "$BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md"
 
 #Pull in contact info
 cat "$BUILD_TEMP_DIR/ContactInfo-JobBoard.md" >> "$JobBoardMarkdownOutputFile"
@@ -38,10 +38,10 @@ echo " " >> "$ClientSubmissionMarkdownOutputFile"
 echo "## Career Highlights" >> "$JobBoardMarkdownOutputFile"
 echo "## Career Highlights" >> "$ClientSubmissionMarkdownOutputFile"
 
-cat "$PipelineClientWorkingDir/Templates/SkillsAndProjects/Projects.md" >> "$JobBoardMarkdownOutputFile"
+cat "$PipelineClientWorkingDir/Templates/MarkdownResume/SkillsAndProjects/Projects.md" >> "$JobBoardMarkdownOutputFile"
 echo "\pagebreak" >> "$JobBoardMarkdownOutputFile"
 
-cat  "$PipelineClientWorkingDir/Templates/SkillsAndProjects/Projects.md" >> "$ClientSubmissionMarkdownOutputFile"
+cat  "$PipelineClientWorkingDir/Templates/MarkdownResume/SkillsAndProjects/Projects.md" >> "$ClientSubmissionMarkdownOutputFile"
 echo "\pagebreak" >> "$ClientSubmissionMarkdownOutputFile"
 
 echo " " >> "$JobBoardMarkdownOutputFile"
@@ -62,7 +62,7 @@ echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
 IFS=$'\n\t'
 for position in \
-$(cat "$PipelineClientWorkingDir/Templates/WorkHistory/WorkHistory.csv"); do
+$(cat "$PipelineClientWorkingDir/Templates/MarkdownResume/WorkHistory/WorkHistory.csv"); do
 
 COMPANY="$(echo $position|awk -F ',' '{print $1}')"
 TITLE="$(echo $position|awk -F ',' '{print $2}')"
@@ -76,10 +76,10 @@ echo "**$COMPANY | $TITLE | $DATEOFEMPLOY**" >> "$ClientSubmissionMarkdownOutput
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
 echo " " >> "$JobBoardMarkdownOutputFile"
-cat "$PipelineClientWorkingDir/Templates/JobHistoryDetails/$COMPANY.md" >> "$JobBoardMarkdownOutputFile"
+cat "$PipelineClientWorkingDir/Templates/MarkdownResuem/JobHistoryDetails/$COMPANY.md" >> "$JobBoardMarkdownOutputFile"
 echo " " >> "$JobBoardMarkdownOutputFile"
 
-cat "$PipelineClientWorkingDir/Templates/JobHistoryDetails/$COMPANY.md" >> "$ClientSubmissionMarkdownOutputFile"
+cat "$PipelineClientWorkingDir/Templates/MarkdownResume/JobHistoryDetails/$COMPANY.md" >> "$ClientSubmissionMarkdownOutputFile"
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 done
 
@@ -105,7 +105,7 @@ echo "|---|---|---|" >> "$ClientSubmissionMarkdownOutputFile"
 #Table rows
 IFS=$'\n\t'
 for skill in \
-$(cat "$PipelineClientWorkingDir/Templates/SkillsAndProjects/Skills.csv"); do
+$(cat "$PipelineClientWorkingDir/Templates/MarkdownResume/SkillsAndProjects/Skills.csv"); do
 SKILL_NAME="$(echo $skill|awk -F '|' '{print $1}')"
 SKILL_YEARS="$(echo $skill|awk -F '|' '{print $2}')"
 SKILL_DETAIL="$(echo $skill|awk -F '|' '{print $3}')"
