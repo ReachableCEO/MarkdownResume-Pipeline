@@ -12,7 +12,7 @@
 ###################################################################
 ###################################################
 
-source CandidateVariables.env
+source "./CandidateVariables.env"
 
 ####################################################
 ####################################################
@@ -27,8 +27,8 @@ source CandidateVariables.env
 ############################################################
 
 readonly MO_PATH="bash ../vendor/git.knownelement.com/ExternalVendorCode/mo/mo"
-readonly BUILD_OUTPUT_DIR="../build-output"
-readonly BUILD_TEMP_DIR="../build-temp"
+readonly BUILD_OUTPUT_DIR="../build-output/MarkdownResume/"
+readonly BUILD_TEMP_DIR="../build-temp/MarkdownResume"
 readonly BUILDYAML_JOBBOARD="$BUILD_TEMP_DIR/JobBoard.yml"
 readonly BUILDYAML_CLIENTSUBMISSION="$BUILD_TEMP_DIR/ClientSubmission.yml"
 readonly BUILDYAML_CANDIDATEINFOSHEET="$BUILD_TEMP_DIR/CandidateInfoSheet.yml"
@@ -68,12 +68,12 @@ $MO_PATH ./BuildTemplate-ClientSubmission.yml > $BUILDYAML_CLIENTSUBMISSION
 
 echo "Creating candidate info sheet..."
 
-$MO_PATH ../Templates/CandidateInfoSheet/CandidateInfoSheet.md > $CandidateInfoSheetMarkdownOutputFile
+$MO_PATH ../Templates/MarkdownResume/CandidateInfoSheet/CandidateInfoSheet.md > $CandidateInfoSheetMarkdownOutputFile
 
 pandoc \
 "$CandidateInfoSheetMarkdownOutputFile" \
 --template eisvogel \
---metadata-file="../build-temp/CandidateInfoSheet.yml" \
+--metadata-file="$BUILD_TEMP_DIR/CandidateInfoSheet.yml" \
 --from markdown \
 --to=pdf \
 --output $CandidateInfoSheetPDFOutputFIle
@@ -81,8 +81,8 @@ pandoc \
 echo "Combining markdown files into single input file for pandoc..."
 
 # Create contact info md file
-$MO_PATH ../Templates/ContactInfo/ContactInfo-JobBoard.md > $BUILD_TEMP_DIR/ContactInfo-JobBoard.md
-$MO_PATH ../Templates/ContactInfo/ContactInfo-ClientSubmit.md > $BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md
+$MO_PATH ../Templates/MarkdownResume/ContactInfo/ContactInfo-JobBoard.md > $BUILD_TEMP_DIR/ContactInfo-JobBoard.md
+$MO_PATH ../Templates/MarkdownResume/ContactInfo/ContactInfo-ClientSubmit.md > $BUILD_TEMP_DIR/ContactInfo-ClientSubmit.md
 
 #Pull in contact info
 cat $BUILD_TEMP_DIR/ContactInfo-JobBoard.md >> $JobBoardMarkdownOutputFile
@@ -94,10 +94,10 @@ echo " " >> $ClientSubmissionMarkdownOutputFile
 echo "## Career Highlights" >> $JobBoardMarkdownOutputFile
 echo "## Career Highlights" >> $ClientSubmissionMarkdownOutputFile
 
-cat ../Templates/SkillsAndProjects/Projects.md >> $JobBoardMarkdownOutputFile
+cat ../Templates/MarkdownResume/SkillsAndProjects/Projects.md >> $JobBoardMarkdownOutputFile
 echo "\pagebreak" >> $JobBoardMarkdownOutputFile
 
-cat ../Templates/SkillsAndProjects/Projects.md >> $ClientSubmissionMarkdownOutputFile
+cat ../Templates/MarkdownResume/SkillsAndProjects/Projects.md >> $ClientSubmissionMarkdownOutputFile
 echo "\pagebreak" >> $ClientSubmissionMarkdownOutputFile
 
 echo " " >> $JobBoardMarkdownOutputFile
@@ -118,7 +118,7 @@ echo " " >> $ClientSubmissionMarkdownOutputFile
 
 IFS=$'\n\t'
 for position in \
-$(cat ../Templates/WorkHistory/WorkHistory.csv); do
+$(cat ../Templates/MarkdownResume/WorkHistory/WorkHistory.csv); do
 
 COMPANY="$(echo $position|awk -F ',' '{print $1}')"
 TITLE="$(echo $position|awk -F ',' '{print $2}')"
@@ -132,10 +132,10 @@ echo "**$COMPANY | $TITLE | $DATEOFEMPLOY**" >> $ClientSubmissionMarkdownOutputF
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
 echo " " >> "$JobBoardMarkdownOutputFile"
-cat ../Templates/JobHistoryDetails/$COMPANY.md >> "$JobBoardMarkdownOutputFile"
+cat ../Templates/MarkdownResume/JobHistoryDetails/$COMPANY.md >> "$JobBoardMarkdownOutputFile"
 echo " " >> "$JobBoardMarkdownOutputFile"
 
-cat ../Templates/JobHistoryDetails/$COMPANY.md >> "$ClientSubmissionMarkdownOutputFile"
+cat ../Templates/MarkdownResume/JobHistoryDetails/$COMPANY.md >> "$ClientSubmissionMarkdownOutputFile"
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 done
 
@@ -161,7 +161,7 @@ echo "|---|---|---|" >> $ClientSubmissionMarkdownOutputFile
 #Table rows
 IFS=$'\n\t'
 for skill in \
-$(cat ../Templates/SkillsAndProjects/Skills.csv); do
+$(cat ../Templates/MarkdownResume/SkillsAndProjects/Skills.csv); do
 SKILL_NAME="$(echo $skill|awk -F '|' '{print $1}')"
 SKILL_YEARS="$(echo $skill|awk -F '|' '{print $2}')"
 SKILL_DETAIL="$(echo $skill|awk -F '|' '{print $3}')"
@@ -176,7 +176,7 @@ echo "Generating PDF output for job board version..."
 pandoc \
 "$JobBoardMarkdownOutputFile" \
 --template eisvogel \
---metadata-file="../build-temp/JobBoard.yml" \
+--metadata-file="$BUILD_TEMP_DIR/JobBoard.yml" \
 --from markdown \
 --to=pdf \
 --output $JobBoardPDFOutputFile
@@ -185,7 +185,7 @@ echo "Generating MSWord output for job board version..."
 
 pandoc \
 "$JobBoardMarkdownOutputFile" \
---metadata-file="../build-temp/JobBoard.yml" \
+--metadata-file="$BUILD_TEMP_DIR/JobBoard.yml" \
 --from markdown \
 --to=docx \
 --reference-doc=resume-docx-reference.docx \
@@ -196,7 +196,7 @@ echo "Generating PDF output for client submission version..."
 pandoc \
 "$ClientSubmissionMarkdownOutputFile" \
 --template eisvogel \
---metadata-file="../build-temp/ClientSubmission.yml" \
+--metadata-file="$BUILD_TEMP_DIR/ClientSubmission.yml" \
 --from markdown \
 --to=pdf \
 --output $ClientSubmissionPDFOutputFile
@@ -205,7 +205,7 @@ echo "Generating MSWord output for client submission version..."
 
 pandoc \
 "$ClientSubmissionMarkdownOutputFile" \
---metadata-file="../build-temp/ClientSubmission.yml" \
+--metadata-file="$BUILD_TEMP_DIR/ClientSubmission.yml" \
 --from markdown \
 --to=docx \
 --reference-doc=resume-docx-reference.docx \

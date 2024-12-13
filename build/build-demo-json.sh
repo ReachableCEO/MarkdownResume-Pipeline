@@ -4,8 +4,8 @@
 #JSON Resume
 #####################################################################################################
 
-export BUILD_OUTPUT_DIR="../build-output/"
-export JSON_TEMPLATE_DIRECTORY="../Templates/jsonresume/"
+export BUILD_OUTPUT_DIR="../build-output/JSONResume/"
+export JSON_TEMPLATE_DIRECTORY="../Templates/JSONResume/"
 
 
 ###################################################################
@@ -37,7 +37,7 @@ add_meta_section()
 
 cat << META >> $BUILD_OUTPUT_DIR/resume.json
   "meta": {
-     "theme": "$JSONRESUME_THEME"
+    "theme": "$JSONRESUME_THEME"
   },
 META
 
