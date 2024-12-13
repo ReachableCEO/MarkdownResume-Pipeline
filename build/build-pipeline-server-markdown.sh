@@ -6,13 +6,13 @@
 
 # Expand variables into rendered YAML files. These will be used by pandoc to create the output artifacts
 
-$MO_PATH "$PipelineClientWorkingDir/build/BuildTemplate-CandidateInfoSheet.yml" > "$BUILDYAML_CANDIDATEINFOSHEET"
-$MO_PATH "$PipelineClientWorkingDir/build/BuildTemplate-JobBoard.yml >" "$BUILDYAML_JOBBOARD"
-$MO_PATH "$PipelineClientWorkingDir/build/BuildTemplate-ClientSubmission.yml" > "$BUILDYAML_CLIENTSUBMISSION"
+$MO_PATH $PipelineClientWorkingDir/build/BuildTemplate-CandidateInfoSheet.yml > "$BUILDYAML_CANDIDATEINFOSHEET"
+$MO_PATH $PipelineClientWorkingDir/build/BuildTemplate-JobBoard.yml > "$BUILDYAML_JOBBOARD"
+$MO_PATH $PipelineClientWorkingDir/build/BuildTemplate-ClientSubmission.yml > "$BUILDYAML_CLIENTSUBMISSION"
 
 echo "Creating candidate info sheet..."
 
-"$MO_PATH" "$PipelineClientWorkingDir/Templates/CandidateInfoSheet/CandidateInfoSheet.md" > "$CandidateInfoSheetMarkdownOutputFile"
+$MO_PATH $PipelineClientWorkingDir/Templates/CandidateInfoSheet/CandidateInfoSheet.md > "$CandidateInfoSheetMarkdownOutputFile"
 
 pandoc \
 "$CandidateInfoSheetMarkdownOutputFile" \
