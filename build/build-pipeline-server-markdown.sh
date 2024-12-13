@@ -17,7 +17,7 @@ $MO_PATH $PipelineClientWorkingDir/Templates/MarkdownResume/CandidateInfoSheet/C
 pandoc \
 "$CandidateInfoSheetMarkdownOutputFile" \
 --template eisvogel \
---metadata-file="$PipelineClientWorkingDir/build-temp/CandidateInfoSheet.yml" \
+--metadata-file="$PipelineClientWorkingDir/build-temp/MarkdownResume/CandidateInfoSheet.yml" \
 --from markdown \
 --to=pdf \
 --output "$CandidateInfoSheetPDFOutputFile"
@@ -120,7 +120,7 @@ echo "Generating PDF output for job board version..."
 pandoc \
 "$JobBoardMarkdownOutputFile" \
 --template eisvogel \
---metadata-file="$PipelineClientWorkingDir/build-temp/JobBoard.yml" \
+--metadata-file="$PipelineClientWorkingDir/build-temp/MarkdownResume/JobBoard.yml" \
 --from markdown \
 --to=pdf \
 --output "$JobBoardPDFOutputFile"
@@ -129,7 +129,7 @@ echo "Generating MSWord output for job board version..."
 
 pandoc \
 "$JobBoardMarkdownOutputFile" \
---metadata-file="$PipelineClientWorkingDir/build-temp/JobBoard.yml" \
+--metadata-file="$PipelineClientWorkingDir/build-temp/MarkdownResume/JobBoard.yml" \
 --from markdown \
 --to=docx \
 --reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
@@ -140,7 +140,7 @@ echo "Generating PDF output for client submission version..."
 pandoc \
 "$ClientSubmissionMarkdownOutputFile" \
 --template eisvogel \
---metadata-file="$PipelineClientWorkingDir/build-temp/ClientSubmission.yml" \
+--metadata-file="$PipelineClientWorkingDir/build-temp/MarkdownResume/ClientSubmission.yml" \
 --from markdown \
 --to=pdf \
 --output "$ClientSubmissionPDFOutputFile"
@@ -149,7 +149,7 @@ echo "Generating MSWord output for client submission version..."
 
 pandoc \
 "$ClientSubmissionMarkdownOutputFile" \
---metadata-file="$PipelineClientWorkingDir/build-temp/ClientSubmission.yml" \
+--metadata-file="$PipelineClientWorkingDir/build-temp/MarkdownResume/ClientSubmission.yml" \
 --from markdown \
 --to=docx \
 --reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
