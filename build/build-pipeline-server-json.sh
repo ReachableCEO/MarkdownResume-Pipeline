@@ -297,7 +297,7 @@ add_interests_section()
       "keywords": [$(echo "$keywords" | sed 's/;/","/g' | sed 's/^/"/;s/$/"/')]
     },
 EOF
-  done < $JSON_TEMPLATE_DIRECTORY\interests.csv
+  done < $JSON_TEMPLATE_DIRECTORY/interests.csv
 
   # Remove trailing comma and close JSON array
   sed -i '$ s/},/}/' $BUILD_OUTPUT_DIR/resume.json
