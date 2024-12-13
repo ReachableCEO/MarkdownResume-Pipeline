@@ -277,7 +277,7 @@ add_languages_section()
       "fluency": "$fluency"
     },
 EOF
-  done < $JSON_TEMPLATE_DIRECTORY\languages.csv
+  done < $JSON_TEMPLATE_DIRECTORY/languages.csv
 
   # Remove trailing comma and close JSON array
   sed -i '$ s/},/}/' $BUILD_OUTPUT_DIR/resume.json
@@ -323,7 +323,7 @@ main()
   add_profiles_section 
   add_work_section 
   add_volunteer_section 
-  add_education-section 
+  add_education_section 
   add_awards_section 
   add_certificates_section 
   add_publications_section 
