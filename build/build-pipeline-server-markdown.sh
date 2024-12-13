@@ -22,7 +22,11 @@ pandoc \
 --metadata-file="$PipelineClientWorkingDir/build-temp/MarkdownResume/CandidateInfoSheet.yml" \
 --from markdown \
 --to=pdf \
---output "$CandidateInfoSheetPDFOutputFile"
+--output $CandidateInfoSheetPDFOutputFile
+
+set +x
+
+exit
 
 echo "Combining markdown files into single input file for pandoc..."
 
