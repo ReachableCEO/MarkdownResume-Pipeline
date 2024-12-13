@@ -1,21 +1,5 @@
 #!/usr/bin/env bash
 
-echo "Cleaning up from previous runs..."
-
-rm "$BUILDYAML_CANDIDATEINFOSHEET"
-rm "$CandidateInfoSheetMarkdownOutputFile"
-rm "$CandidateInfoSheetPDFOutputFIle"
-
-rm "$BUILDYAML_JOBBOARD"
-rm "$JobBoardMarkdownOutputFile"
-rm "$JobBoardPDFOutputFile"
-rm "$JobBoardMSWordOutputFile"
-
-rm "$BUILDYAML_CLIENTSUBMISSION"
-rm "$ClientSubmissionMarkdownOutputFile"
-rm "$ClientSubmissionPDFOutputFile"
-rm "$ClientSubmissionMSWordOutputFile"
-
 #####################################################################################################
 #Markdown to PDF/MSWord Resumek and candidate info sheet
 #####################################################################################################
