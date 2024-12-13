@@ -76,7 +76,7 @@ echo "**$COMPANY | $TITLE | $DATEOFEMPLOY**" >> "$ClientSubmissionMarkdownOutput
 echo " " >> "$ClientSubmissionMarkdownOutputFile"
 
 echo " " >> "$JobBoardMarkdownOutputFile"
-cat "$PipelineClientWorkingDir/Templates/MarkdownResuem/JobHistoryDetails/$COMPANY.md" >> "$JobBoardMarkdownOutputFile"
+cat "$PipelineClientWorkingDir/Templates/MarkdownResume/JobHistoryDetails/$COMPANY.md" >> "$JobBoardMarkdownOutputFile"
 echo " " >> "$JobBoardMarkdownOutputFile"
 
 cat "$PipelineClientWorkingDir/Templates/MarkdownResume/JobHistoryDetails/$COMPANY.md" >> "$ClientSubmissionMarkdownOutputFile"
