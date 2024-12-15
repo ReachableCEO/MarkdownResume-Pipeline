@@ -128,7 +128,7 @@ echo "Generating PDF output for job board version..."
 pandoc \
 "$JobBoardMarkdownOutputFile" \
 --template eisvogel \
---metadata-file="$BUILDYAML_JOBBOARD"\
+--metadata-file="$BUILDYAML_JOBBOARD" \
 --from markdown \
 --to=pdf \
 --output "$JobBoardPDFOutputFile"
