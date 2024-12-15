@@ -22,7 +22,7 @@ $MO_PATH $PipelineClientWorkingDir/Templates/MarkdownResume/CandidateInfoSheet/C
 
 pandoc \
 "$CandidateInfoSheetMarkdownOutputFile" \
---template $PANODOC_TEMPLATE \
+--template $PANDOC_TEMPLATE \
 --metadata-file="$BUILDYAML_CANDIDATEINFOSHEET" \
 --from markdown \
 --to=pdf \
