@@ -127,23 +127,11 @@ echo "Generating PDF output for job board version..."
 
 pandoc \
 "$JobBoardMarkdownOutputFile" \
---template eisvogel \
+--template $PANDOC_TEMPLATE \
 --metadata-file="$BUILDYAML_JOBBOARD" \
 --from markdown \
 --to=pdf \
 --output "$JobBoardPDFOutputFile"
-
-
-
-echo "Generating MSWord output for job board version..."
-
-pandoc \
-"$JobBoardMarkdownOutputFile" \
---metadata-file=" $BUILDYAML_JOBBOARD" \
---from markdown \
---to=docx \
---reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
---output "$JobBoardMSWordOutputFile"
 
 echo "Generating PDF output for client submission version..."
 
@@ -154,6 +142,16 @@ pandoc \
 --from markdown \
 --to=pdf \
 --output "$ClientSubmissionPDFOutputFile"
+
+echo "Generating MSWord output for job board version..."
+
+pandoc \
+"$JobBoardMarkdownOutputFile" \
+--metadata-file=" $BUILDYAML_JOBBOARD" \
+--from markdown \
+--to=docx \
+--reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
+--output "$JobBoardMSWordOutputFile"
 
 echo "Generating MSWord output for client submission version..."
 
