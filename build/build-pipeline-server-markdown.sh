@@ -150,7 +150,7 @@ pandoc \
 --metadata-file="$BUILDYAML_JOBBOARD" \
 --from markdown \
 --to=docx \
---reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
+--reference-doc="$WordOutputReferenceDoc" \
 --output "$JobBoardMSWordOutputFile"
 
 echo "Generating MSWord output for client submission version..."
@@ -160,5 +160,5 @@ pandoc \
 --metadata-file="$BUILDYAML_CLIENTSUBMISSION" \
 --from markdown \
 --to=docx \
---reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
+--reference-doc="$WordOutputReferenceDoc" \
 --output "$ClientSubmissionMSWordOutputFile"
