@@ -147,7 +147,7 @@ echo "Generating MSWord output for job board version..."
 
 pandoc \
 "$JobBoardMarkdownOutputFile" \
---metadata-file=" $BUILDYAML_JOBBOARD" \
+--metadata-file="$BUILDYAML_JOBBOARD" \
 --from markdown \
 --to=docx \
 --reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
