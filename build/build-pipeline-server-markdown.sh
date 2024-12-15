@@ -157,7 +157,7 @@ echo "Generating MSWord output for client submission version..."
 
 pandoc \
 "$ClientSubmissionMarkdownOutputFile" \
---metadata-file="$BUILDYAML_CLIENTSUBMISSION"\
+--metadata-file="$BUILDYAML_CLIENTSUBMISSION" \
 --from markdown \
 --to=docx \
 --reference-doc="$PipelineClientWorkingDir/build/resume-docx-reference.docx" \
