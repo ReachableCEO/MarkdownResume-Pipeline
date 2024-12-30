@@ -7,6 +7,15 @@
     - [Outputs](#outputs)
   - [Production Use](#production-use)
 
+## Quick licensing. One 
+
+- Only the code is covered by the AGOL v3.0 only. Data files are excluded. 
+ 
+- Any data files you pass to the code and any generated outputs are excluded from the AGPL v3.0. You retain all rights under applicable law to any input and output data. 
+- This also includes anything you do with the illustrative example files included. They are not considered derivative works. 
+
+- Any use, inclusion , consumption of the code in source or binary or micro service etc form is covered under AGOL v3.0 only.   
+
 ## Introduction
 
 Resume formatting/publication/management is difficult, tedious, annoying etc. The @ReachableCEO has hacked the process and made it easy! This repository is the core build scripts, templates etc used for resume management. It's meant as one half of a complete solution.
